@@ -47,7 +47,8 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'medialog.dutchtheme',
-        'plone.app.imagecropping'
+        'plone.app.imagecropping',
+        'collective.collectionfilter'
 
     ],
     extras_require={

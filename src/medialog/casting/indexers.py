@@ -10,13 +10,14 @@ from datetime import date
 def ageIndexer(obj):
     #born is required, so I dont think we need to check for it
     days_in_year = 365.2425
-    return int((date.today() - obj.born).days / days_in_year)
+    age = int((date.today() - obj.born).days / days_in_year)
+    return str(age)
 
-@indexer(IActorBehavior)
-def sortable_titleIndexer(obj):
-    return obj.first_name + ', ' + obj.last_name
+#@indexer(IActorBehavior)
+#def sortable_titleIndexer(obj):
+#    return obj.first_name + ' ' + obj.last_name
 
-@indexer(IActorBehavior)
-def TitleIndexer(obj):
-    #fields are required, so I dont think we need to check for it
-    return obj.first_name + ', ' + obj.last_name
+#@indexer(IActorBehavior)
+#def TitleIndexer(obj):
+#    #fields are required, so I dont think we need to check for it
+#    return obj.first_name + ' ' + obj.last_name
