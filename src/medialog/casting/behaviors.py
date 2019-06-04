@@ -107,56 +107,46 @@ class IActorBehavior(model.Schema):
     last_name = schema.TextLine(
         title = _("Etternavn", default=u"Etternavn"),
         required = True,
-        description = _("help_last_name"),
     )
 
     first_name = schema.TextLine(
         title = _("Fornavn", default=u"Fornavn"),
-        required = True,
-        description = _("help_first_name"),
     )
 
     sex = schema.Choice(
         title = _("sex", default=u"Kjønn"),
         required = True,
-        description = _("help_sex"),
         vocabulary = SexVocabulary
     )
 
     image =  namedfile.NamedBlobImage(
         title = _("profile_image", default=u"Profil image"),
         required = True,
-        description = _("help_profileimage"),
     )
 
     cv = namedfile.NamedFile(
         title = _("cv", default=u"CV (fil)"),
         required = False,
-        description = _("help_cv"),
     )
 
     video = schema.URI(
         title = _("video", default=u"Video link"),
         required = False,
-        description = _("help_video_link"),
     )
 
     adress = schema.Text(
         title = _("Adresse", default=u"Adresse"),
         required = False,
-        description = _("help_adresse"),
     )
 
     phone = schema.TextLine(
         title = _("phone", default=u"Telefon"),
         required = False,
-        description = _("help_phone"),
     )
 
     email = Email(
         title = _("email", default=u"E-post"),
         required = False,
-        description = _("help_email"),
     )
 
     born = schema.Date(
@@ -166,28 +156,24 @@ class IActorBehavior(model.Schema):
     eye_color = schema.Choice(
         title = _("eye_color", default=u"Øyefarge"),
         required = True,
-        description = _("help_eye_color"),
         vocabulary = EyeColorVocabulary
     )
 
     hair_color = schema.Choice(
         title = _("hair_color", default=u"Hår farge"),
         required = True,
-        description = _("help_hair_color"),
         vocabulary = HairColorVocabulary
     )
 
     etnisitet = schema.Choice(
         title = _("Etnisitet", default=u"Eetnisitet"),
         required = False,
-        description = _("help_eye_etnisitet"),
         vocabulary = EtnisitetVocabulary
     )
 
     language = schema.Choice(
         title = _("Language", default=u"Language"),
         required = False,
-        description = _("help_eye_language"),
         vocabulary = LanguageVocabulary
     )
 

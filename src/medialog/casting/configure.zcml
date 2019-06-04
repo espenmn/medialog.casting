@@ -20,7 +20,8 @@
   <include file="upgrades.zcml" />
 
   <adapter factory=".indexers.ageIndexer" name="age" />
-  <adapter factory=".indexers.titleIndexer" name="title" />
+  <!--adapter factory=".indexers.sortable_titleIndexer" name="sortable_title" /-->
+  <adapter factory=".indexers.TitleIndexer" name="Title" />
 
   <genericsetup:registerProfile
       name="default"

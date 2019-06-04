@@ -13,8 +13,10 @@ def ageIndexer(obj):
     return int((date.today() - obj.born).days / days_in_year)
 
 @indexer(IActorBehavior)
-def titleIndexer(obj):
-    if hasattr(self, 'first_name') and hasattr(self, 'last_name'):
-        return self.first_names + ', ' + self.last_name
-    else:
-        return ''
+def sortable_titleIndexer(obj):
+    return obj.first_name + ', ' + obj.last_name
+
+@indexer(IActorBehavior)
+def TitleIndexer(obj):
+    #fields are required, so I dont think we need to check for it
+    return obj.first_name + ', ' + obj.last_name
