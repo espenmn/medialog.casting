@@ -11,7 +11,7 @@ def ageIndexer(obj):
     #born is required, so I dont think we need to check for it
     days_in_year = 365.2425
     age = int((date.today() - obj.born).days / days_in_year)
-    return str(age)
+    return str("%02d" % age)
 
 #@indexer(IActorBehavior)
 #def sortable_titleIndexer(obj):

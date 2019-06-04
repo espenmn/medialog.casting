@@ -16,3 +16,10 @@ class IActorView(BrowserView):
         #div / mod ?
         days_in_year = 365.2425
         return int((date.today() - self.context.born).days / days_in_year)
+
+
+
+class FolderView(BrowserView):
+    pass
+
+    

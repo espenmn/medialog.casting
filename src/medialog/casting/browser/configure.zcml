@@ -12,6 +12,15 @@
     	permission="zope.Public"
     />
 
+    <browser:pages
+        for="*"
+        permission="zope2.View">
+      <browser:page
+          name="actors_view"
+          template="actors.pt"
+          />
+    </browser:pages>
+
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot

@@ -7,10 +7,16 @@
     i18n:domain="medialog.casting">
 <body>
 
-<metal:content-core fill-slot="content-core">
+<metal:content-core fill-slot="main">
 <metal:block define-macro="content-core">
 
     <h1><span>${context/first_name|None}</span> <b>${context/last_name|None}</b></h1>
+    <p>Født: <span class="pat-moment"
+       data-pat-moment="format:calendar">
+        ${python: context.born}
+      </span>
+    </p>
+
     <div class="flex">
       <figure tal:define="scale_func context/@@images;
              scaled_image python:scale_func.scale('image', scale='preview')">
@@ -44,6 +50,26 @@
         <span class="actor_value">${context/erfaring|None}</span>
       </p>
     </div>
+
+<style>
+  div.textblock {
+	margin-right:  auto;
+	margin-left: 3em;
+}
+
+div.textblock span.actor_value {
+	font-weight: bold;
+	margin-left: 0.5em;
+}
+
+#content div.flex {
+	padding: 20px 0;
+	margin: 16px 0 30px 0;
+	border-top: 2px solid #4da5d9;
+	border-bottom:   2px solid #4da5d9;
+}
+
+</style>
 
   </metal:block>
 </metal:content-core>
