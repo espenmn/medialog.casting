@@ -25,32 +25,66 @@
             </a>
           </h2>
 
-          <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
+          <!--div metal:use-macro="context/@@listing_view/macros/document_byline"></div-->
 
-          <div tal:define="thumb_url python:item_url + '/@@images/image/' + thumb_scale_summary;"
-               tal:condition="python: item_has_image and thumb_scale_summary"
-               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
-            <a tal:attributes="href item_link">
-              <img tal:replace="structure python:image_scale.tag(item, 'image', scale=thumb_scale_summary, css_class='thumb-' + thumb_scale_summary)" />
+          <div class="flex">
+            <div tal:define="thumb_url python:item_url + '/@@images/image/' + thumb_scale_summary;"
+                 tal:condition="python: item_has_image and thumb_scale_summary">
+              <a tal:attributes="href item_link">
+                <img tal:replace="structure python:image_scale.tag(item, 'image', scale=thumb_scale_summary, css_class='thumb-' + thumb_scale_summary)" />
 
-            </a>
-          </div>
+              </a>
+            </div>
 
+          <div class="textblock">
+            <p><span>Alder:</span> <span class="actor_value">${item/age}</span></p>
+            <p><span>Kjønn:</span> <span class="actor_value">${item/sex|None}</span></p>
+            <p><span>Etnisitet:   <span class="actor_value">${item/etnisitet|None}</span></p>
+            <p><span>Språk:       <span class="actor_value">${item/language|None}</span></p>
+            <p><span>Dialekt:     <span class="actor_value">${item/dialekt|None}</span></p>
+            <p><span>Øyenfarge:   <span class="actor_value">${item/eye_color|None}</span></p>
+            <p><span>Hårfarge:    <span class="actor_value">${item/hair_color|None}</span></p>
+            <p><span>Høyde:       <span class="actor_value">${item/height|None} cm</span></p>
+            <p><span>Vekt:        <span class="actor_value">${item/weight|None} kg</span></p>
+            <p><span>Utdanning    <span class="actor_value">${item/education|None}</span></p>
 
-          <div class="tileFooter">
             <a tal:attributes="href item_link"
                 i18n:translate="read_more">
-              Read More&hellip;
+              Full info&hellip;
             </a>
+           </div>
           </div>
 
           <div class="visualClear"><!-- --></div>
 
         </article>
+        <style>
+          div.textblock {
+        	margin-right:  auto;
+        	margin-left: 3em;
+        }
 
+        div.textblock span.actor_value {
+        	font-weight: bold;
+        	margin-left: 0.5em;
+        }
+
+        #content div.flex {
+        	padding: 20px 0;
+        	margin: 16px 0 30px 0;
+        	border-top: 2px solid #4da5d9;
+        	border-bottom:   2px solid #4da5d9;
+        }
+
+        </style>
       </metal:entry>
+
+
+
     </metal:block>
   </metal:entries>
+
+
 
 </metal:block>
 </metal:content-core>

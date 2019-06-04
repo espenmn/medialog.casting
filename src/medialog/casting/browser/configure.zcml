@@ -13,7 +13,8 @@
     />
 
     <browser:pages
-        for="*"
+        for="plone.app.contenttypes.interfaces.ICollection"
+        class="plone.app.contenttypes.browser.collection.CollectionView"
         permission="zope2.View">
       <browser:page
           name="actors_view"
