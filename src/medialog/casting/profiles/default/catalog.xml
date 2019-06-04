@@ -1,4 +1,50 @@
 <?xml version="1.0"?>
 <object name="portal_catalog">
-  <!--<column value="my_meta_column"/>-->
+
+<index name="first_name" meta_type="FieldIndex">
+  <indexed_attr value="first_name"/>
+</index>
+<index name="sex" meta_type="FieldIndex">
+  <indexed_attr value="sex"/>
+</index>
+<index name="born" meta_type="DateIndex">
+  <indexed_attr value="born"/>
+</index>
+<index name="age" meta_type="FieldIndex">
+  <indexed_attr value="age"/>
+</index>
+<index name="etnisitet" meta_type="FieldIndex">
+  <indexed_attr value="etnisitet"/>
+</index>
+<index name="eye_color" meta_type="FieldIndex">
+  <indexed_attr value="eye_color"/>
+</index>
+<index name="hair_color" meta_type="FieldIndex">
+  <indexed_attr value="hair_color"/>
+</index>
+<index name="height" meta_type="FieldIndex">
+  <indexed_attr value="height"/>
+</index>
+<index name="weight" meta_type="FieldIndex">
+  <indexed_attr value="weight"/>
+</index>
+<index name="language" meta_type="KeywordIndex">
+   <indexed_attr value="language"/>
+</index>
+<index name="driving_licence" meta_type="KeywordIndex">
+   <indexed_attr value="driving_licence"/>
+</index>
+
+<column value="first_name"/>
+<column value="sex"/>
+<column value="born"/>
+<column value="age"/>
+<column value="etnisitet"/>
+<column value="language"/>
+<column value="eye_color"/>
+<column value="hair_color"/>
+<column value="height"/>
+<column value="weight" />
+<column value="driving_licence" />
+
 </object>

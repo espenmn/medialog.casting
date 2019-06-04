@@ -11,13 +11,16 @@
     Be careful if you use general includeDependencies, it can have sideffects!
     Better import explicite packages or configurations ;)
   -->
+
   <!--<includeDependencies package="." />-->
 
+  <include file="behaviors.zcml" />
   <include package=".browser" />
-
   <include file="permissions.zcml" />
-
   <include file="upgrades.zcml" />
+
+  <adapter factory=".indexers.ageIndexer" name="age" />
+  <adapter factory=".indexers.titleIndexer" name="title" />
 
   <genericsetup:registerProfile
       name="default"
@@ -41,7 +44,5 @@
       factory=".setuphandlers.HiddenProfiles"
       name="medialog.casting-hiddenprofiles"
       />
-
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>

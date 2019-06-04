@@ -46,6 +46,9 @@ setup(
         'plone.api>=1.8.4',
         'plone.restapi',
         'plone.app.dexterity',
+        'medialog.dutchtheme',
+        'plone.app.imagecropping'
+
     ],
     extras_require={
         'test': [
