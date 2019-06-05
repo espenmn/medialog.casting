@@ -39,14 +39,14 @@
           <div class="textblock">
             <p><span i18n:translate="age">Alder:</span> <span class="actor_value">${item/age}</span></p>
             <p><span>Kjønn:</span> <span class="actor_value">${item/sex|None}</span></p>
-            <p><span>Etnisitet:   <span class="actor_value">${item/etnisitet|None}</span></p>
-            <p><span>Språk:       <span class="actor_value">${item/language|None}</span></p>
-            <p><span>Dialekt:     <span class="actor_value">${item/dialekt|None}</span></p>
-            <p><span>Øyenfarge:   <span class="actor_value">${item/eye_color|None}</span></p>
-            <p><span>Hårfarge:    <span class="actor_value">${item/hair_color|None}</span></p>
-            <p><span>Høyde:       <span class="actor_value">${item/height|None} cm</span></p>
-            <p><span>Vekt:        <span class="actor_value">${item/weight|None} kg</span></p>
-            <p><span>Utdanning    <span class="actor_value">${item/education|None}</span></p>
+            <p><span>Etnisitet:</span>    <span class="actor_value">${item/etnisitet|None}</span></p>
+            <p><span>Språk:</span>        <span class="actor_value">${item/language|None}</span></p>
+            <p><span>Dialekt:</span>      <span class="actor_value">${item/dialekt|None}</span></p>
+            <p><span>Øyenfarge:</span>    <span class="actor_value">${item/eye_color|None}</span></p>
+            <p><span>Hårfarge:</span>     <span class="actor_value">${item/hair_color|None}</span></p>
+            <p><span>Høyde:</span>        <span class="actor_value">${item/height|None} cm</span></p>
+            <p><span>Vekt:</span>         <span class="actor_value">${item/weight|None} kg</span></p>
+            <p><span>Utdanning</span>     <span class="actor_value">${item/education|None}</span></p>
 
             <a tal:attributes="href item_link"
                 i18n:translate="read_more">
