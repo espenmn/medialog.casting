@@ -36,7 +36,7 @@ Test Teardown  Close all browsers
 
 Scenario: As a site administrator I can add a Actor
   Given a logged-in site administrator
-    and an add Folder form
+    and an add Actor form
    When I type 'My Actor' into the title field
     and I submit the form
    Then a Actor with the title 'My Actor' has been created
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a Actor
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Folder form
-  Go To  ${PLONE_URL}/++add++Folder
+an add Actor form
+  Go To  ${PLONE_URL}/++add++Actor
 
 a Actor 'My Actor'
-  Create content  type=Folder  id=my-actor  title=My Actor
+  Create content  type=Actor  id=my-actor  title=My Actor
 
 # --- WHEN -------------------------------------------------------------------
 

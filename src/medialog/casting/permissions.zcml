@@ -6,6 +6,12 @@
   <configure zcml:condition="installed AccessControl.security">
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="medialog.casting.AddActor"
+        title="medialog.casting: Add Actor"
+    />
+
+
 
   </configure>
 
