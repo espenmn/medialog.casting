@@ -4,7 +4,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
     metal:use-macro="context/main_template/macros/master"
-    i18n:domain="plone">
+    i18n:domain="medialog.casting">
 <body>
 
 <metal:content-core fill-slot="content-core">
@@ -37,7 +37,7 @@
             </div>
 
           <div class="textblock">
-            <p><span>Alder:</span> <span class="actor_value">${item/age}</span></p>
+            <p><span i18n:translate="age">Alder:</span> <span class="actor_value">${item/age}</span></p>
             <p><span>Kjønn:</span> <span class="actor_value">${item/sex|None}</span></p>
             <p><span>Etnisitet:   <span class="actor_value">${item/etnisitet|None}</span></p>
             <p><span>Språk:       <span class="actor_value">${item/language|None}</span></p>

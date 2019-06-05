@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-06-05 17:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: medialog/casting/browser/actor_view.pt:49
+msgid "${klasse}"
+msgstr ""
+
+#: medialog/casting/profiles/default/types/Actor.xml
+msgid "Actor"
+msgstr ""
+
+#. Default: "Adresse"
+#: medialog/casting/behaviors.py:115
+msgid "Adresse"
+msgstr ""
+
+#: medialog/casting/behaviors.py:53
+msgid "Afrikansk"
+msgstr ""
+
+#: medialog/casting/behaviors.py:44
+msgid "Blond"
+msgstr ""
+
+#: medialog/casting/behaviors.py:35
+msgid "Blå"
+msgstr ""
+
+#: medialog/casting/behaviors.py:40
+msgid "Blå-grå"
+msgstr ""
+
+#: medialog/casting/behaviors.py:39
+msgid "Blå-grønn"
+msgstr ""
+
+#: medialog/casting/behaviors.py:37
+msgid "Brun"
+msgstr ""
+
+#: medialog/casting/behaviors.py:70
+msgid "Buss (Klasse D og DE)"
+msgstr ""
+
+#: medialog/casting/profiles/default/types/Actor.xml
+msgid "Edit"
+msgstr ""
+
+#. Default: "Eetnisitet"
+#: medialog/casting/behaviors.py:132
+msgid "Etnisitet"
+msgstr ""
+
+#. Default: "Etternavn"
+#: medialog/casting/behaviors.py:84
+msgid "Etternavn"
+msgstr ""
+
+#. Default: "Fornavn"
+#: medialog/casting/behaviors.py:80
+msgid "Fornavn"
+msgstr ""
+
+#: medialog/casting/behaviors.py:48
+msgid "Grå"
+msgstr ""
+
+#: medialog/casting/behaviors.py:36
+msgid "Grønn"
+msgstr ""
+
+#: medialog/casting/configure.zcml:33
+msgid "Installs the medialog.casting add-on."
+msgstr ""
+
+#: medialog/casting/behaviors.py:31
+msgid "Kvinne"
+msgstr ""
+
+#. Default: "Language"
+#: medialog/casting/behaviors.py:138
+msgid "Language"
+msgstr ""
+
+#: medialog/casting/behaviors.py:68
+msgid "Lastebil (klasse C og CE)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:30
+msgid "Mann"
+msgstr ""
+
+#: medialog/casting/behaviors.py:69
+msgid "Minibuss (klasse D1 og D!E)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:65
+msgid "Motorsykkel (klasse A)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:63
+msgid "Motorsykkel (klasse A1)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:64
+msgid "Motorsykkel (klasse A2)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:38
+msgid "Mørk"
+msgstr ""
+
+#: medialog/casting/behaviors.py:58
+msgid "Norsk"
+msgstr ""
+
+#: medialog/casting/profiles/default/types/Actor.xml
+msgid "Person"
+msgstr ""
+
+#: medialog/casting/behaviors.py:66
+msgid "Personbil (klasse B og B 96)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:67
+msgid "Personbil med tilhenger (BE)"
+msgstr ""
+
+#: medialog/casting/behaviors.py:45
+msgid "Rød"
+msgstr ""
+
+#: medialog/casting/behaviors.py:49
+msgid "Skallet"
+msgstr ""
+
+#: medialog/casting/behaviors.py:54
+msgid "Skandinavisk"
+msgstr ""
+
+#: medialog/casting/behaviors.py:72
+msgid "Snøscooter"
+msgstr ""
+
+#: medialog/casting/behaviors.py:46
+msgid "Svart"
+msgstr ""
+
+#: medialog/casting/behaviors.py:71
+msgid "Traktor"
+msgstr ""
+
+#: medialog/casting/configure.zcml:42
+msgid "Uninstalls the medialog.casting add-on."
+msgstr ""
+
+#: medialog/casting/behaviors.py:59
+msgid "Urdu"
+msgstr ""
+
+#. Default: "Vekt i kilo"
+#: medialog/casting/behaviors.py:150
+msgid "Vekt"
+msgstr ""
+
+#: medialog/casting/profiles/default/types/Actor.xml
+msgid "View"
+msgstr ""
+
+#. Default: "Alder:"
+#: medialog/casting/browser/actors_view.pt:40
+msgid "age"
+msgstr ""
+
+#. Default: "Fødselsdato"
+#: medialog/casting/behaviors.py:110
+msgid "born"
+msgstr ""
+
+#. Default: "CV (fil)"
+#: medialog/casting/behaviors.py:181
+msgid "cv"
+msgstr ""
+
+#. Default: "Førerkort"
+#: medialog/casting/behaviors.py:156
+msgid "driver_lincence"
+msgstr ""
+
+#. Default: "E-post"
+#: medialog/casting/behaviors.py:105
+msgid "email"
+msgstr ""
+
+#. Default: "Øyefarge"
+#: medialog/casting/behaviors.py:120
+msgid "eye_color"
+msgstr ""
+
+#. Default: "Hår farge"
+#: medialog/casting/behaviors.py:126
+msgid "hair_color"
+msgstr ""
+
+#. Default: "Høyde i cm"
+#: medialog/casting/behaviors.py:144
+msgid "height"
+msgstr ""
+
+#. Default: "Jakkestørrelse"
+#: medialog/casting/behaviors.py:170
+msgid "jacket_size"
+msgstr ""
+
+#. Default: "Prosjekter"
+#: medialog/casting/behaviors.py:192
+msgid "label_related_items"
+msgstr ""
+
+#: medialog/casting/configure.zcml:33
+msgid "medialog.casting"
+msgstr ""
+
+#: medialog/casting/configure.zcml:42
+msgid "medialog.casting (uninstall)"
+msgstr ""
+
+#. Default: "Telefon"
+#: medialog/casting/behaviors.py:100
+msgid "phone"
+msgstr ""
+
+#. Default: "Profil image"
+#: medialog/casting/behaviors.py:89
+msgid "profile_image"
+msgstr ""
+
+#. Default: "Full info…"
+#: medialog/casting/browser/actors_view.pt:51
+msgid "read_more"
+msgstr ""
+
+#. Default: "Kjønn"
+#: medialog/casting/behaviors.py:94
+msgid "sex"
+msgstr ""
+
+#. Default: "Skostørrelse"
+#: medialog/casting/behaviors.py:165
+msgid "shoe_size"
+msgstr ""
+
+#. Default: "Buksestørrelse"
+#: medialog/casting/behaviors.py:175
+msgid "trousers_size"
+msgstr ""
+
+#. Default: "Video link"
+#: medialog/casting/behaviors.py:186
+msgid "video"
+msgstr ""

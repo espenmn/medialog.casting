@@ -1,21 +1,20 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1\n"
 "POT-Creation-Date: 2019-06-05 17:29+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2019-06-05 19:36+0100\n"
+"Last-Translator: espenm <post@medialog.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: medialog.casting\n"
+"Domain: DOMAIN\n"
+"X-Generator: Poedit 1.5.7\n"
+"Language: no\n"
 
 #: medialog/casting/browser/actor_view.pt:49
 msgid "${klasse}"
@@ -23,67 +22,67 @@ msgstr ""
 
 #: medialog/casting/profiles/default/types/Actor.xml
 msgid "Actor"
-msgstr ""
+msgstr "Skuespiller"
 
 #. Default: "Adresse"
 #: medialog/casting/behaviors.py:115
 msgid "Adresse"
-msgstr ""
+msgstr "Adresse"
 
 #: medialog/casting/behaviors.py:53
 msgid "Afrikansk"
-msgstr ""
+msgstr "Afrikansk"
 
 #: medialog/casting/behaviors.py:44
 msgid "Blond"
-msgstr ""
+msgstr "Blond"
 
 #: medialog/casting/behaviors.py:35
 msgid "Blå"
-msgstr ""
+msgstr "Blå"
 
 #: medialog/casting/behaviors.py:40
 msgid "Blå-grå"
-msgstr ""
+msgstr "Blå-grå"
 
 #: medialog/casting/behaviors.py:39
 msgid "Blå-grønn"
-msgstr ""
+msgstr "Blå-grønn"
 
 #: medialog/casting/behaviors.py:37
 msgid "Brun"
-msgstr ""
+msgstr "Brun"
 
 #: medialog/casting/behaviors.py:70
 msgid "Buss (Klasse D og DE)"
-msgstr ""
+msgstr "Buss (Klasse D og DE)"
 
 #: medialog/casting/profiles/default/types/Actor.xml
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #. Default: "Eetnisitet"
 #: medialog/casting/behaviors.py:132
 msgid "Etnisitet"
-msgstr ""
+msgstr "Etnisitet"
 
 #. Default: "Etternavn"
 #: medialog/casting/behaviors.py:84
 msgid "Etternavn"
-msgstr ""
+msgstr "Etternavn"
 
 #. Default: "Fornavn"
 #: medialog/casting/behaviors.py:80
 msgid "Fornavn"
-msgstr ""
+msgstr "Fornavn"
 
 #: medialog/casting/behaviors.py:48
 msgid "Grå"
-msgstr ""
+msgstr "Grå"
 
 #: medialog/casting/behaviors.py:36
 msgid "Grønn"
-msgstr ""
+msgstr "Grønn"
 
 #: medialog/casting/configure.zcml:33
 msgid "Installs the medialog.casting add-on."
@@ -91,44 +90,44 @@ msgstr ""
 
 #: medialog/casting/behaviors.py:31
 msgid "Kvinne"
-msgstr ""
+msgstr "Kvinne"
 
 #. Default: "Language"
 #: medialog/casting/behaviors.py:138
 msgid "Language"
-msgstr ""
+msgstr "Språk"
 
 #: medialog/casting/behaviors.py:68
 msgid "Lastebil (klasse C og CE)"
-msgstr ""
+msgstr "Lastebil (klasse C og CE)"
 
 #: medialog/casting/behaviors.py:30
 msgid "Mann"
-msgstr ""
+msgstr "Mann"
 
 #: medialog/casting/behaviors.py:69
 msgid "Minibuss (klasse D1 og D!E)"
-msgstr ""
+msgstr "Minibuss (klasse D1 og D!E)"
 
 #: medialog/casting/behaviors.py:65
 msgid "Motorsykkel (klasse A)"
-msgstr ""
+msgstr "Motorsykkel (klasse A)"
 
 #: medialog/casting/behaviors.py:63
 msgid "Motorsykkel (klasse A1)"
-msgstr ""
+msgstr "Motorsykkel (klasse A1)"
 
 #: medialog/casting/behaviors.py:64
 msgid "Motorsykkel (klasse A2)"
-msgstr ""
+msgstr "Motorsykkel (klasse A2)"
 
 #: medialog/casting/behaviors.py:38
 msgid "Mørk"
-msgstr ""
+msgstr "Mørk"
 
 #: medialog/casting/behaviors.py:58
 msgid "Norsk"
-msgstr ""
+msgstr "Norsk"
 
 #: medialog/casting/profiles/default/types/Actor.xml
 msgid "Person"
@@ -136,35 +135,35 @@ msgstr ""
 
 #: medialog/casting/behaviors.py:66
 msgid "Personbil (klasse B og B 96)"
-msgstr ""
+msgstr "Personbil (klasse B og B 96)"
 
 #: medialog/casting/behaviors.py:67
 msgid "Personbil med tilhenger (BE)"
-msgstr ""
+msgstr "Personbil med tilhenger (BE)"
 
 #: medialog/casting/behaviors.py:45
 msgid "Rød"
-msgstr ""
+msgstr "Rød"
 
 #: medialog/casting/behaviors.py:49
 msgid "Skallet"
-msgstr ""
+msgstr "Skallet"
 
 #: medialog/casting/behaviors.py:54
 msgid "Skandinavisk"
-msgstr ""
+msgstr "Skandinavisk"
 
 #: medialog/casting/behaviors.py:72
 msgid "Snøscooter"
-msgstr ""
+msgstr "Snøscooter"
 
 #: medialog/casting/behaviors.py:46
 msgid "Svart"
-msgstr ""
+msgstr "Svart"
 
 #: medialog/casting/behaviors.py:71
 msgid "Traktor"
-msgstr ""
+msgstr "Traktor"
 
 #: medialog/casting/configure.zcml:42
 msgid "Uninstalls the medialog.casting add-on."
@@ -177,7 +176,7 @@ msgstr ""
 #. Default: "Vekt i kilo"
 #: medialog/casting/behaviors.py:150
 msgid "Vekt"
-msgstr ""
+msgstr "Vekt"
 
 #: medialog/casting/profiles/default/types/Actor.xml
 msgid "View"
@@ -186,47 +185,47 @@ msgstr ""
 #. Default: "Alder:"
 #: medialog/casting/browser/actors_view.pt:40
 msgid "age"
-msgstr ""
+msgstr "Alder"
 
 #. Default: "Fødselsdato"
 #: medialog/casting/behaviors.py:110
 msgid "born"
-msgstr ""
+msgstr "Født"
 
 #. Default: "CV (fil)"
 #: medialog/casting/behaviors.py:181
 msgid "cv"
-msgstr ""
+msgstr "cv"
 
 #. Default: "Førerkort"
 #: medialog/casting/behaviors.py:156
 msgid "driver_lincence"
-msgstr ""
+msgstr "Førerkort"
 
 #. Default: "E-post"
 #: medialog/casting/behaviors.py:105
 msgid "email"
-msgstr ""
+msgstr "e-post"
 
 #. Default: "Øyefarge"
 #: medialog/casting/behaviors.py:120
 msgid "eye_color"
-msgstr ""
+msgstr "Øyefarge"
 
 #. Default: "Hår farge"
 #: medialog/casting/behaviors.py:126
 msgid "hair_color"
-msgstr ""
+msgstr "Hårfarge"
 
 #. Default: "Høyde i cm"
 #: medialog/casting/behaviors.py:144
 msgid "height"
-msgstr ""
+msgstr "Høyde"
 
 #. Default: "Jakkestørrelse"
 #: medialog/casting/behaviors.py:170
 msgid "jacket_size"
-msgstr ""
+msgstr "Jakke størrelse"
 
 #. Default: "Prosjekter"
 #: medialog/casting/behaviors.py:192
@@ -244,34 +243,34 @@ msgstr ""
 #. Default: "Telefon"
 #: medialog/casting/behaviors.py:100
 msgid "phone"
-msgstr ""
+msgstr "Telefon"
 
 #. Default: "Profil image"
 #: medialog/casting/behaviors.py:89
 msgid "profile_image"
-msgstr ""
+msgstr "Profilbilde"
 
 #. Default: "Full info…"
 #: medialog/casting/browser/actors_view.pt:51
 msgid "read_more"
-msgstr ""
+msgstr "Mer info"
 
 #. Default: "Kjønn"
 #: medialog/casting/behaviors.py:94
 msgid "sex"
-msgstr ""
+msgstr "Kjønn"
 
 #. Default: "Skostørrelse"
 #: medialog/casting/behaviors.py:165
 msgid "shoe_size"
-msgstr ""
+msgstr "Skostørrelse"
 
 #. Default: "Buksestørrelse"
 #: medialog/casting/behaviors.py:175
 msgid "trousers_size"
-msgstr ""
+msgstr "Buksestørrelse"
 
 #. Default: "Video link"
 #: medialog/casting/behaviors.py:186
 msgid "video"
-msgstr ""
+msgstr "video"
