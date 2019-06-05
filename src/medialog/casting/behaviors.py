@@ -73,34 +73,6 @@ DriverLicenceVocabulary = SimpleVocabulary(
     )
 
 
-class Actor(Interface):
-    """Person content class"""
-    #@property
-    def title(self):
-        if hasattr(self, 'first_name') and hasattr(self, 'last_name'):
-            return self.first_names + ', ' + self.last_name
-        else:
-            return ''
-
-    def setTitle(self, value):
-        return
-
-    #@property
-    def age(self):
-        #calculate age from today - date born
-        if hasattr(self, 'born'):
-            days_in_year = 365.2425
-            age = int((date.today() - born).days / days_in_year)
-            return age
-        else:
-            return None
-
-    def setAge(self, value):
-        return
-
-
-
-
 class IActorBehavior(model.Schema):
     """ Add actor behavior"""
 

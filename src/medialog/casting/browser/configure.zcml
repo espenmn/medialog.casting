@@ -5,10 +5,10 @@
     i18n_domain="medialog.casting">
 
     <browser:page
-      for="medialog.casting.behaviors.IActorBehavior"
+      for="medialog.casting.content.actor.IActor"
       name="actor_view"
       class=".views.IActorView"
-      template="actor.pt"
+      template="actor_view.pt"
     	permission="zope.Public"
     />
 
@@ -18,7 +18,7 @@
         permission="zope2.View">
       <browser:page
           name="actors_view"
-          template="actors.pt"
+          template="actors_view.pt"
           />
     </browser:pages>
 
