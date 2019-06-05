@@ -2,7 +2,7 @@
 #setuptools
 #zc.buildout
 zc.buildout == 2.5.3
-setuptools == 24.3.0
+#setuptools == 24.3.0
 #setuptools==38.2.4
 #xzc.buildout==2.10.0
 setuptools==39.1.0
