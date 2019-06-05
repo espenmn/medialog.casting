@@ -14,3 +14,16 @@ from zope import schema
 class IActor(model.Schema):
     """Dexterity Schema for Actor
     """
+
+
+class Actor(Item):
+"""Actor content class"""
+    @property
+    def title(self):
+        if hasattr(self, 'first_name') and hasattr(self, 'last_name'):
+            return '{0} {1}'.format(self.first_name, self.last_name)
+        else:
+            return 'NN'
+
+    def setTitle(self, value):
+        return
