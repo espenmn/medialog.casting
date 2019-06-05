@@ -24,13 +24,17 @@
              tal:on-error=""/>
       </figure>
       <div class="textblock">
-      <p><span>Alder:</span> <span class="actor_value">${view/get_age}</span></p>
+      <p><span>Alder:</span> <span class="actor_value">${context/age|None} år</span></p>
       <p><span>Kjønn:</span> <span class="actor_value">${context/sex|None}</span></p>
-      <p><span>Kontaktinfo: <span class="actor_value">${context/adresse|None}</span></p>
+      <p><span><!--i class="fa fas fa-address-card"/-->Kontaktinfo: <span class="actor_value">
+        <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None} &nbsp;
+        <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
+        <i class="fa fa-phone"/ tal:condition="context/adresse|None"/>  ${context/phone|None}</span>
+      </p>
       <p><span>Etnisitet:   <span class="actor_value">${context/etnisitet|None}</span></p>
       <p><span>Språk:       <span class="actor_value">${context/language|None}</span></p>
       <p><span>Dialekt:     <span class="actor_value">${context/dialekt|None}</span></p>
-      <p><span>Øyenfarge:   <span class="actor_value">${context/eye_color|None}</span></p>
+      <p><span><!--i class="fa fa-eye"></i-->Øyenfarge:   <span class="actor_value">${context/eye_color|None}</span></p>
       <p><span>Hårfarge:    <span class="actor_value">${context/hair_color|None}</span></p>
       <p><span>Høyde:       <span class="actor_value">${context/height|None} cm</span></p>
       <p><span>Vekt:        <span class="actor_value">${context/weight|None} kg</span></p>
@@ -41,8 +45,8 @@
     <div class="annet">
       <p>
         <span>Førerkort: </span>
-        <span class="actor_value" tal:repeat='klasse context/driver_licence|None'>
-          ${klasse}
+        <span class="actor_value" tal:repeat='klasse context/driving_licence|None'>
+          <span i18n:translate="">${klasse}</span>
         </span>
       </p>
       <p>

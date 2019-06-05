@@ -5,7 +5,7 @@
     i18n_domain="medialog.casting">
 
     <browser:page
-      for="medialog.casting.content.actor.IActor"
+      for="*"
       name="actor_view"
       class=".views.IActorView"
       template="actor_view.pt"

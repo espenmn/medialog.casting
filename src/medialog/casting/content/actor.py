@@ -1,63 +1,36 @@
 # -*- coding: utf-8 -*-
-# from plone.app.textfield import RichText
-# from plone.autoform import directives
 from plone.dexterity.content import Container
-# from plone.namedfile import field as namedfile
 from plone.supermodel import model
-# from plone.supermodel.directives import fieldset
-# from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
 from zope.interface import implementer
-
+from datetime import date
 
 # from medialog.casting import _
 
 
 class IActor(model.Schema):
-    """ Marker interface and Dexterity Python Schema for Actor
-    """
-    # If you want, you can load a xml model created TTW here
-    # and customize it in Python:
-
+    """ Marker interface and Dexterity Python Schema for Actor    """
     # model.load('actor.xml')
-
-    # directives.widget(level=RadioFieldWidget)
-    # level = schema.Choice(
-    #     title=_(u'Sponsoring Level'),
-    #     vocabulary=LevelVocabulary,
-    #     required=True
-    # )
-
-    # text = RichText(
-    #     title=_(u'Text'),
-    #     required=False
-    # )
-
-    # url = schema.URI(
-    #     title=_(u'Link'),
-    #     required=False
-    # )
-
-    # fieldset('Images', fields=['logo', 'advertisement'])
-    # logo = namedfile.NamedBlobImage(
-    #     title=_(u'Logo'),
-    #     required=False,
-    # )
-
-    # advertisement = namedfile.NamedBlobImage(
-    #     title=_(u'Advertisement (Gold-sponsors and above)'),
-    #     required=False,
-    # )
-
-    # directives.read_permission(notes='cmf.ManagePortal')
-    # directives.write_permission(notes='cmf.ManagePortal')
-    # notes = RichText(
-    #     title=_(u'Secret Notes (only for site-admins)'),
-    #     required=False
-    # )
 
 
 @implementer(IActor)
 class Actor(Container):
     """
     """
+    #@property
+    def title(self):
+        if hasattr(self, 'first_name') and hasattr(self, 'last_name'):
+            return '{0} {1}'.format(self.first_name, self.last_name)
+        else:
+            return 'NN'
+
+    #def setTitle(self, value):
+    #    actor-1 etc for url is better so dont do anything here
+    #    return
+
+    @property
+    def age(self):
+        days_in_year = 365.2425
+        if hasattr(self, 'born'):
+            age = int((date.today() - self.born).days / days_in_year)
+            return age
+            #return str("%02d" % age)

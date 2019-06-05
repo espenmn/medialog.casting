@@ -1,0 +1,44 @@
+/* @override http://localhost:8088/aktoratet/++resource++medialog.iconpicker/icon-fonts/font-awesome-4.2.0/css/font-awesome.min.css */
+
+a#portal-logo {
+	max-width: 200px;
+}
+
+.template-login_form div#mainnavigation-wrapper,
+.template-login_form  div#portal-searchbox,
+.template-login_form #portal-breadcrumbs,
+body.template-login_form footer#portal-footer-wrapper,
+.template-login_form #portal-breadcrumbs,
+body.template-login_form div#portal-mobile-sitemap {
+	display:  none !important;
+}
+
+.template-login_form  #portal-header {
+	margin: 0 !important;
+	display: flex;
+}
+
+ 
+.template-login_form.template-login_form a#portal-logo {
+	margin: 10vh auto -17px;
+	padding: 2em;
+	width: 300px;
+}
+
+.template-login_form  div.outer-wrapper {
+	min-height: 100vh;
+	background: #EEE url(http://localhost:8088/aktoratet/login_background.png);
+	background-size: cover
+}
+
+.template-login_form.template-login_form div#content-core {
+	border:  0 none !important;
+}
+
+.template-login_form div#portal-header {
+	 display: flex;
+}
+ 
+div.outer-wrapper {
+	min-height: 100vh;
+}

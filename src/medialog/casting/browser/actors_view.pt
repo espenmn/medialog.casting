@@ -71,10 +71,25 @@
 
         #content div.flex {
         	padding: 20px 0;
-        	margin: 16px 0 30px 0;
+        	margin: 3px 0 30px 0;
         	border-top: 2px solid #4da5d9;
         	border-bottom:   2px solid #4da5d9;
         }
+
+        a.summary.url {
+        	background: #4da5d9;
+        	color:  white;
+        	padding: 5px 20px;
+        	border-radius: 5px 5px 0 0;
+          font-size: 26px;
+
+        }
+
+        h2.tileHeadline {
+        	margin-bottom: 0;
+        	xpadding-left: 20px;
+        }
+
 
         </style>
       </metal:entry>

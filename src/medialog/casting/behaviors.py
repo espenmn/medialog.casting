@@ -76,19 +76,13 @@ DriverLicenceVocabulary = SimpleVocabulary(
 class IActorBehavior(model.Schema):
     """ Add actor behavior"""
 
-    last_name = schema.TextLine(
-        title = _("Etternavn", default=u"Etternavn"),
-        required = True,
-    )
-
     first_name = schema.TextLine(
         title = _("Fornavn", default=u"Fornavn"),
     )
 
-    sex = schema.Choice(
-        title = _("sex", default=u"Kjønn"),
+    last_name = schema.TextLine(
+        title = _("Etternavn", default=u"Etternavn"),
         required = True,
-        vocabulary = SexVocabulary
     )
 
     image =  namedfile.NamedBlobImage(
@@ -96,19 +90,10 @@ class IActorBehavior(model.Schema):
         required = True,
     )
 
-    cv = namedfile.NamedFile(
-        title = _("cv", default=u"CV (fil)"),
-        required = False,
-    )
-
-    video = schema.URI(
-        title = _("video", default=u"Video link"),
-        required = False,
-    )
-
-    adress = schema.Text(
-        title = _("Adresse", default=u"Adresse"),
-        required = False,
+    sex = schema.Choice(
+        title = _("sex", default=u"Kjønn"),
+        required = True,
+        vocabulary = SexVocabulary
     )
 
     phone = schema.TextLine(
@@ -123,6 +108,12 @@ class IActorBehavior(model.Schema):
 
     born = schema.Date(
         title = _("born", default=u"Fødselsdato"),
+    )
+
+
+    adresse = schema.Text(
+        title = _("Adresse", default=u"Adresse"),
+        required = False,
     )
 
     eye_color = schema.Choice(
@@ -184,6 +175,18 @@ class IActorBehavior(model.Schema):
         title = _("trousers_size", default=u"Buksestørrelse"),
         required = False,
     )
+
+
+    cv = namedfile.NamedFile(
+        title = _("cv", default=u"CV (fil)"),
+        required = False,
+    )
+
+    video = schema.URI(
+        title = _("video", default=u"Video link"),
+        required = False,
+    )
+
 
     relatedItems = RelationList(
         title=_(u'label_related_items', default=u'Prosjekter'),
