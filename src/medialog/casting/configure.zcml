@@ -22,6 +22,8 @@
   <adapter factory=".indexers.ageIndexer" name="age" />
   <adapter factory=".indexers.titleIndexer" name="Title" />
   <adapter factory=".indexers.titleIndexer" name="sortable_title" />
+  <adapter factory=".indexers.heightIndexer" name="height" />
+  <adapter factory=".indexers.weightIndexer" name="weight" />
 
   <genericsetup:registerProfile
       name="default"
