@@ -27,49 +27,8 @@ today = datetime.now()
 
 
 SexVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'Man', title=_(u'Mann')),
-     SimpleTerm(value=u'Woman', title=_(u'Kvinne')),]
-    )
-
-EyeColorVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'blue', title=_(u'Blå')),
-     SimpleTerm(value=u'green', title=_(u'Grønn')),
-     SimpleTerm(value=u'brown', title=_(u'Brun')),
-     SimpleTerm(value=u'dark', title=_(u'Mørk')),
-     SimpleTerm(value=u'blue-green', title=_(u'Blå-grønn')),
-     SimpleTerm(value=u'blue-grey', title=_(u'Blå-grå')),]
-    )
-
-HairColorVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'blond', title=_(u'Blond')),
-     SimpleTerm(value=u'red', title=_(u'Rød')),
-     SimpleTerm(value=u'black', title=_(u'Svart')),
-     SimpleTerm(value=u'brown', title=_(u'Blå')),
-     SimpleTerm(value=u'grey', title=_(u'Grå')),
-     SimpleTerm(value=u'bold', title=_(u'Skallet')),]
-    )
-
-EtnisitetVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'african', title=_(u'Afrikansk')),
-     SimpleTerm(value=u'scandinavian', title=_(u'Skandinavisk')),]
-    )
-
-LanguageVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'norsk', title=_(u'Norsk')),
-     SimpleTerm(value=u'urdu', title=_(u'Urdu')),]
-    )
-
-DriverLicenceVocabulary = SimpleVocabulary(
-    [SimpleTerm(value=u'a1', title=_(u'Motorsykkel (klasse A1)')),
-     SimpleTerm(value=u'a2', title=_(u'Motorsykkel (klasse A2)')),
-     SimpleTerm(value=u'a', title=_(u'Motorsykkel (klasse A)')),
-     SimpleTerm(value=u'b', title=_(u'Personbil (klasse B og B 96)')),
-     SimpleTerm(value=u'be', title=_(u'Personbil med tilhenger (BE)')),
-     SimpleTerm(value=u'c1', title=_(u'Lastebil (klasse C og CE)')),
-     SimpleTerm(value=u'd1', title=_(u'Minibuss (klasse D1 og D!E)')),
-     SimpleTerm(value=u'd', title=_(u'Buss (Klasse D og DE)')),
-     SimpleTerm(value=u't', title=_(u'Traktor')),
-     SimpleTerm(value=u's', title=_(u'Snøscooter')),]
+    [SimpleTerm(value=u'Mann', title=_(u'Mann')),
+     SimpleTerm(value=u'Kvinne', title=_(u'Kvinne')),]
     )
 
 
@@ -119,25 +78,28 @@ class IActorBehavior(model.Schema):
     eye_color = schema.Choice(
         title = _("eye_color", default=u"Øyefarge"),
         required = True,
-        vocabulary = EyeColorVocabulary
+        vocabulary = 'medialog.casting.EyeColorVocabulary'
     )
 
     hair_color = schema.Choice(
         title = _("hair_color", default=u"Hår farge"),
         required = True,
-        vocabulary = HairColorVocabulary
+        vocabulary = 'medialog.casting.HairColorVocabulary'
     )
 
     etnisitet = schema.Choice(
         title = _("Etnisitet", default=u"Eetnisitet"),
         required = False,
-        vocabulary = EtnisitetVocabulary
+        vocabulary =  'medialog.casting.EtnisitetVocabulary'
     )
 
-    language = schema.Choice(
+    language = schema.List (
+        title = _("Languages", default=u"Languages"),
+        value_type=schema.Choice(
         title = _("Language", default=u"Language"),
         required = False,
-        vocabulary = LanguageVocabulary
+        vocabulary = 'medialog.casting.LanguageVocabulary'
+        )
     )
 
     height = schema.Int(
@@ -156,7 +118,7 @@ class IActorBehavior(model.Schema):
         title = _("driver_lincence", default=u"Førerkort"),
         value_type=schema.Choice(
             title=u'Lisenstype',
-            vocabulary = DriverLicenceVocabulary
+            vocabulary = 'medialog.casting.DriverLicenceVocabulary'
         ),
                 required=False,
     )
@@ -199,11 +161,3 @@ class IActorBehavior(model.Schema):
     )
 
 alsoProvides(IActorBehavior, IFormFieldProvider)
-
-
-#    age = schema.Int(
-#        title = _("age", default=u"Alder"),
-#        required = False,
-#        description = _("help_alder",
-#            default="calculated age"),
-#    )

@@ -7,16 +7,18 @@
     i18n:domain="medialog.casting">
 <body>
 
-<metal:content-core fill-slot="main">
-<metal:block define-macro="content-core">
+<metal:content-core fill-slot="content-core">
 
-  <section id="section-${view/id}" class=""
-    tal:define="items context/@@contentlisting;">
-       <ol class="flex flex-wrap">
-        <tal:image tal:repeat="item items|None">
-          <li tal:define="obj item/getObject;
+
+  <section id="gridview" class=""
+    tal:define="items context/@@contentlisting">
+
+       <ol class="flex flex-wrap">xxx
+        <tal:image tal:repeat="item items">
+          <li  tal:define="obj item/getObject;
                  scale_func obj/@@images;
                  scaled_image python:scale_func.scale('image', width=250, height=150, direction='down')">
+sss
             <figure tal:condition="scaled_image">
               <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
                 <img  class="image-popup"
@@ -31,7 +33,7 @@
       </ol>
   <style>
 
-  #section-${view/id} ol.flex.flex-wrap  {
+  #gridview ol.flex.flex-wrap  {
     padding: 0;
     list-style-image: none;
     list-style-type: none;
@@ -40,7 +42,7 @@
     margin: auto;
   }
 
-  #section-${view/id} li { 
+  #gridview li { 
       width: 250px;
       margin: 250px;
       list-style-image: none;
@@ -48,11 +50,11 @@
       overflow: hidden;
   }
 
-  #section-${view/id} img {
+  #gridview img {
     width: 100%;
   }
 
-  #section-${view/id} p.center {
+  #gridview p.center {
     text-align: center;
     margin-top: 1em;
     overflow: hidden;
@@ -65,7 +67,6 @@
   </section>
 
 
-  </metal:block>
 </metal:content-core>
 
 </body>

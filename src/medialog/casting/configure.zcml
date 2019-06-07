@@ -48,4 +48,27 @@
       name="medialog.casting-hiddenprofiles"
       />
 
+
+  <!-- Vocabularies) -->
+
+  <utility
+  	  component="medialog.casting.vocabularies.EtnisitetVocabulary"
+      name="medialog.casting.EtnisitetVocabulary" />
+
+  <utility
+  	  component="medialog.casting.vocabularies.EyeColorVocabulary"
+      name="medialog.casting.EyeColorVocabulary" />
+
+  <utility
+  	  component="medialog.casting.vocabularies.HairColorVocabulary"
+      name="medialog.casting.HairColorVocabulary" />
+
+  <utility
+  	  component="medialog.casting.vocabularies.LanguageVocabulary"
+      name="medialog.casting.LanguageVocabulary" />
+
+  <utility
+  	  component="medialog.casting.vocabularies.DriverLicenceVocabulary"      
+      name="medialog.casting.DriverLicenceVocabulary" />
+
 </configure>

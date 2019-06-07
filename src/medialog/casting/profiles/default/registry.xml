@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <registry>
-<!-- -*- extra stuff goes here -*- -->
-
+    <records interface="medialog.casting.interfaces.IMedialogCastingSettings">
+        <value key="etnisitet">Norsk</value>
+        <value key="eyecolor"></value>
+        <value key="haircolor"></value>
+        <value key="driverlicence"></value>
+        <value key="languages">Norsk</value>
+    </records>
 </registry>
