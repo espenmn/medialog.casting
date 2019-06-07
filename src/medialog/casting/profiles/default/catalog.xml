@@ -13,7 +13,7 @@
 <index name="age" meta_type="FieldIndex">
   <indexed_attr value="age"/>
 </index>
-<index name="etnisitet" meta_type="FieldIndex">
+<index name="etnisitet" meta_type="KeywordIndex">
   <indexed_attr value="etnisitet"/>
 </index>
 <index name="eye_color" meta_type="FieldIndex">
@@ -35,6 +35,11 @@
    <indexed_attr value="driving_licence"/>
 </index>
 
+<index name=erfaring meta_type="KeywordIndex">
+   <indexed_attr value="erfaring"/>
+</index>
+
+<column value="erfaring"/>
 <column value="first_name"/>
 <column value="sex"/>
 <column value="born"/>

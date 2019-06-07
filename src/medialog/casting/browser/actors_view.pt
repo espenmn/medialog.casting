@@ -63,12 +63,17 @@
             </p>
             <p><span>Erfaring: </span>
               <span class="actor_value">
-                <tal:repeat tal:repeat='rep item/erfaring|None'>
-                 <span>${rep}. </span>
+                <tal:repeat tal:repeat="ref item/erfaring|None">
+                 <span>${ref}. </span>
                </tal:repeat>
             </p>
 
-
+            <p><span>Prosjekter: </span>
+              <span class="actor_value">
+                <tal:repeat tal:repeat="ref relatedItems|None">
+                 <span>${ref/to_object/Title} </span>
+               </tal:repeat>
+            </p>
            </div>
           </div>
 
@@ -115,8 +120,6 @@
 
     </metal:block>
   </metal:entries>
-
-
 
 </metal:block>
 </metal:content-core>
