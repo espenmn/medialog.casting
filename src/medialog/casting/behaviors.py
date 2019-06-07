@@ -8,6 +8,7 @@ from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
+from plone.app.vocabularies.catalog import CatalogSource
 from plone.namedfile import field as namedfile
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -164,7 +165,7 @@ class IActorBehavior(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u'Prosjekter',
-            vocabulary='plone.app.vocabularies.Catalog'
+            source=CatalogSource(portal_type=['News Item', 'Prosjekt']),
         ),
         required=False,
     )
