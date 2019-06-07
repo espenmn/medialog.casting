@@ -77,7 +77,7 @@ class IActorBehavior(model.Schema):
         vocabulary = 'medialog.casting.HairColorVocabulary'
     )
 
-    language = schema.List (
+    etnisitet = schema.List (
         title = _("Etnisitet", default=u"Etnisitet"),
         value_type=schema.Choice(
             title = _("Etnisitet", default=u"Etnisitet"),
