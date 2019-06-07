@@ -29,19 +29,19 @@
       <p><span><!--i class="fa fas fa-address-card"/-->Kontaktinfo: <span class="actor_value">
         <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None} &nbsp;
         <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
-        <i class="fa fa-phone"/ tal:condition="context/phone|None"/>  ${context/phone|None}</span>
+        <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None}</span>
       </p>
       <p><span>Etnisitet:   </span>
          <span class="actor_value">
            <tal:repeat tal:repeat='rep context/etnisitet|None'>
-            <span>${rep}</span>
+            <span>${rep}. &nbsp;</span>
           </tal:repeat>
          </span>
        </p>
       <p><span i18n:translate="">Språk:       </span>
       <span class="actor_value">
         <tal:repeat tal:repeat='rep context/language|None'>
-          <span>• ${rep}</span>
+          <span>${rep}. &nbsp;</span>
          </tal:repeat>
         </span>
       </p>
@@ -53,7 +53,7 @@
     </div>
 
     </div>
-      <div class="infotext"><i class="fa fa-info"></i>  <div tal:replace="structure context/text/output|None" />
+      <div class="infotext"><h4><i class="fa fa-info"></i> <b>Annen info</b></h4> <div tal:replace="structure context/text/output|None" />
     </div>
 
     <div class="annet">
@@ -65,7 +65,10 @@
       </p>
       <p>
         <span>Erfaring: </span>
-        <span class="actor_value">${context/erfaring|None}</span>
+        <span class="actor_value">
+          <tal:repeat tal:repeat='rep context/erfaring|None'>
+           <span>• ${rep}</span>
+         </tal:repeat>
       </p>
     </div>
 
@@ -91,14 +94,11 @@ div.textblock span.actor_value {
 	font-size: 1.4em;
 	color:  white;
 	xposition: relative;
-	xleft:  -2.2em;
-	xtop:  1.5em;
 	xposition: relative;
 	background: #62a4d4;
-	xwidth:  1.5em;
-	xheight:  1.5em;
-	padding: 6px 12px;
+	padding: 0.2em 0.5em;
   margin-bottom: 10px;
+  margin-right: 0.5em;
 	border-radius: 50%;
 }
 </style>

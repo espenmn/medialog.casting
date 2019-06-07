@@ -95,9 +95,14 @@ class IActorBehavior(model.Schema):
         )
     )
 
+    dialekt = schema.TextLine(
+        title = _("Dialekt", default=u"Dialekt"),
+        required = False,
+    )
+
     height = schema.Int(
         title = _("height", default=u"Høyde i cm"),
-        min = 80,
+        min = 40,
         max = 240
     )
 
@@ -113,7 +118,18 @@ class IActorBehavior(model.Schema):
             title=u'Lisenstype',
             vocabulary = 'medialog.casting.DriverLicenceVocabulary'
         ),
-                required=False,
+        required=False,
+    )
+
+
+    erfaring = schema.List(
+        title = _("Erfaring", default=u"Erfaring"),
+        description = _("En pr linje", default=u"En erfaring pr linje"),
+        value_type=schema.TextLine(
+            title=u'Erfaring',
+            required=False,
+        ),
+        required=False,
     )
 
     shoe_size = schema.TextLine(
