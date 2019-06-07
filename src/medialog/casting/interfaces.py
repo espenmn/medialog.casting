@@ -29,6 +29,10 @@ class IMedialogCastingSettings(model.Schema):
         label=_(u'Unik Casting'),
         fields=[
              'etnisitet',
+             'languages',
+             'haircolor',
+             'eyecolor',
+             'driverlicence'
         ],
      )
 

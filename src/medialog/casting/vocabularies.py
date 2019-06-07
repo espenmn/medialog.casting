@@ -38,7 +38,7 @@ directlyProvides(HairColorVocabulary, IVocabularyFactory)
 
 
 def LanguageVocabulary(context):
-    settings = api.portal.get_registry_record('medialog.casting.interfaces.IMedialogCastingSettings.language')
+    settings = api.portal.get_registry_record('medialog.casting.interfaces.IMedialogCastingSettings.languages')
     if settings:
         terms = [ SimpleTerm(value=pair, token=format_size(pair), title=pair) for pair in settings ]
     return SimpleVocabulary(terms)

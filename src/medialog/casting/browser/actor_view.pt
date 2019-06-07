@@ -29,24 +29,38 @@
       <p><span><!--i class="fa fas fa-address-card"/-->Kontaktinfo: <span class="actor_value">
         <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None} &nbsp;
         <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
-        <i class="fa fa-phone"/ tal:condition="context/adresse|None"/>  ${context/phone|None}</span>
+        <i class="fa fa-phone"/ tal:condition="context/phone|None"/>  ${context/phone|None}</span>
       </p>
-      <p><span>Etnisitet:   <span class="actor_value">${context/etnisitet|None}</span></p>
-      <p><span>Språk:       <span class="actor_value">${context/language|None}</span></p>
+      <p><span>Etnisitet:   </span>
+         <span class="actor_value">
+           <tal:repeat tal:repeat='rep context/etnisitet|None'>
+            <span>${rep}</span>
+          </tal:repeat>
+         </span>
+       </p>
+      <p><span i18n:translate="">Språk:       </span>
+      <span class="actor_value">
+        <tal:repeat tal:repeat='rep context/language|None'>
+          <span>• ${rep}</span>
+         </tal:repeat>
+        </span>
+      </p>
       <p><span>Dialekt:     <span class="actor_value">${context/dialekt|None}</span></p>
-      <p><span><!--i class="fa fa-eye"></i-->Øyenfarge:   <span class="actor_value">${context/eye_color|None}</span></p>
-      <p><span>Hårfarge:    <span class="actor_value">${context/hair_color|None}</span></p>
-      <p><span>Høyde:       <span class="actor_value">${context/height|None} cm</span></p>
-      <p><span>Vekt:        <span class="actor_value">${context/weight|None} kg</span></p>
-      <p><span>Utdanning    <span class="actor_value">${context/education|None}</span></p>
+      <p><span>Øyenfarge:   </span><span class="actor_value">${context/eye_color|None}</span></p>
+      <p><span>Hårfarge:    </span><span class="actor_value">${context/hair_color|None}</span></p>
+      <p><span>Høyde:       </span><span class="actor_value">${context/height|None} cm</span></p>
+      <p><span>Vekt:        </span><span class="actor_value">${context/weight|None} kg</span></p>
     </div>
+
+    </div>
+      <div class="infotext"><i class="fa fa-info"></i>  <div tal:replace="structure context/text/output|None" />
     </div>
 
     <div class="annet">
       <p>
         <span>Førerkort: </span>
         <span class="actor_value" tal:repeat='klasse context/driving_licence|None'>
-          <span i18n:translate="">${klasse}</span>
+          <span i18n:translate="">• ${klasse}</span>
         </span>
       </p>
       <p>
@@ -73,6 +87,20 @@ div.textblock span.actor_value {
 	border-bottom:   2px solid #4da5d9;
 }
 
+.infotext i {
+	font-size: 1.4em;
+	color:  white;
+	xposition: relative;
+	xleft:  -2.2em;
+	xtop:  1.5em;
+	xposition: relative;
+	background: #62a4d4;
+	xwidth:  1.5em;
+	xheight:  1.5em;
+	padding: 6px 12px;
+  margin-bottom: 10px;
+	border-radius: 50%;
+}
 </style>
 
   </metal:block>

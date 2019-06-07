@@ -20,6 +20,39 @@ Examples
 This add-on can be seen in action at the following sites:
 - Is there a page on the internet where everybody can see the features?
 
+Common setting
+--------------
+Blå
+Grønn
+Brun
+Mørk
+Blå-grønn
+Blå-grå
+
+Blond
+Rød
+Svart
+Blå
+Grå
+Skallet
+
+Afrikansk
+Skandinavisk
+
+Norsk
+Urdu
+
+Motorsykkel (klasse A1)
+Motorsykkel (klasse A2)
+Motorsykkel (klasse A)
+Personbil (klasse B og B 96)
+Personbil med tilhenger (BE)
+Lastebil (klasse C og CE)
+Minibuss (klasse D1 og D!E)
+Buss (Klasse D og DE)
+Traktor
+Snøscooter
+
 
 Documentation
 -------------

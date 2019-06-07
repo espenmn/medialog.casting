@@ -16,16 +16,6 @@ from plone.schema import Email
 _ = MessageFactory('medialog.casting')
 
 
-FALLBACK_TIMEZONE = 'UTC'
-from datetime import date
-from datetime import datetime
-from datetime import timedelta
-from DateTime import DateTime
-
-#We will need to compute age of each actor
-today = datetime.now()
-
-
 SexVocabulary = SimpleVocabulary(
     [SimpleTerm(value=u'Mann', title=_(u'Mann')),
      SimpleTerm(value=u'Kvinne', title=_(u'Kvinne')),]
@@ -87,18 +77,21 @@ class IActorBehavior(model.Schema):
         vocabulary = 'medialog.casting.HairColorVocabulary'
     )
 
-    etnisitet = schema.Choice(
-        title = _("Etnisitet", default=u"Eetnisitet"),
-        required = False,
-        vocabulary =  'medialog.casting.EtnisitetVocabulary'
+    language = schema.List (
+        title = _("Etnisitet", default=u"Etnisitet"),
+        value_type=schema.Choice(
+            title = _("Etnisitet", default=u"Etnisitet"),
+            required = False,
+            vocabulary =  'medialog.casting.EtnisitetVocabulary'
+        )
     )
 
     language = schema.List (
         title = _("Languages", default=u"Languages"),
         value_type=schema.Choice(
-        title = _("Language", default=u"Language"),
-        required = False,
-        vocabulary = 'medialog.casting.LanguageVocabulary'
+            title = _("Language", default=u"Language"),
+            required = False,
+            vocabulary = 'medialog.casting.LanguageVocabulary'
         )
     )
 
