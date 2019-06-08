@@ -72,7 +72,8 @@
               <span class="actor_value">
                 <tal:repeat tal:repeat="ref item/relatedItems|None">
                  <span>${ref/to_object/Title}. &nbsp;</span>
-               </tal:repeat>
+                </tal:repeat>
+              </span>   
             </p>
            </div>
           </div>
