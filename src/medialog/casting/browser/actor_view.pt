@@ -75,6 +75,8 @@
             <tal:repeat tal:repeat="ref context/relatedItems|None">
                  <span>${ref/to_object/Title}. &nbsp;</span>
             </tal:repeat>
+                <span>${ref/from_object}. &nbsp;</span>
+ 
         </span>
        </p>
     </div>
