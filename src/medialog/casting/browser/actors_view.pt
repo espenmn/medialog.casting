@@ -11,6 +11,7 @@
 <metal:block use-macro="context/@@listing_view/macros/content-core">
 
   <metal:entries fill-slot="entries">
+    <div><button class="black white-background"><i class="fa fa-compress" id="compact_button"> </i></button></div>
     <metal:block use-macro="context/@@listing_view/macros/entries"
         tal:define="portal context/@@plone_portal_state/portal;
                     image_scale portal/@@image_scale">
@@ -113,8 +114,57 @@
         	xpadding-left: 20px;
         }
 
+        .smaller article.tileItem {
+          	width: 48%;
+          	min-width: 330px;
+          	float: left;
+
+          }
+
+          .smaller  header.portletHeader {
+          	padding-top: 3px !important;
+          	padding-bottom: 3px !important;
+          }
+
+          .smaller  div.portletContent.filterContent {
+          		font-size: 96%
+          }
+
+          .smaller h2 a.summary.url {
+          	margin: 3px 0!important;
+          	font-size: 70%
+          }
+
+          .smaller  article.tileItem {
+           margin-right: 2%
+          }
+
+          .smaller #content-core article.tileItem div.flex {
+           background: whitesmoke;
+          }
+
+          .smaller #content-core article.tileItem div.flex p {
+           margin: 2px 0;
+           font-size: 100%
+          }
+
+          .smaller #content-core article.tileItem div.flex div.textblock {
+          	margin-left: 1em;
+          }
+
+          .smaller  div.padding-10-0.margin-10-0 a {
+          	margin-left: 10px;
+          }
+
+
 
         </style>
+
+        <script>
+          $('#compact_button').click(function() {
+            $('#content').toggleClass('smaller');
+            });
+        </script>
       </metal:entry>
 
 
