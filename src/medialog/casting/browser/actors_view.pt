@@ -71,9 +71,9 @@
             <p><span>Prosjekter: </span>
               <span class="actor_value">
                 <tal:repeat tal:repeat="ref item/relatedItems|None">
-                 <span>${ref/to_object/Title}. &nbsp;</span>
+                 <span>${ref/to_object/Title}. </span>
                 </tal:repeat>
-              </span>   
+              </span>
             </p>
            </div>
           </div>

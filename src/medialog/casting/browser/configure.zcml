@@ -12,12 +12,12 @@
     	permission="zope.Public"
     />
 
-    <browser:page
+    <!--browser:page
       for="*"
       name="grid_view"
       template="gridview.pt"
     	permission="zope.Public"
-    />
+    /-- >
 
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
