@@ -139,20 +139,20 @@
            margin-right: 2%
           }
 
-          .smaller #content-core article.tileItem div.flex {
+          .smaller article.tileItem div.flex {
            background: whitesmoke;
           }
 
-          .smaller #content-core article.tileItem div.flex p {
+          .smaller article.tileItem div.flex p {
            margin: 2px 0;
            font-size: 100%
           }
 
-          .smaller #content-core article.tileItem div.flex div.textblock {
+          .smaller div.flex div.textblock {
           	margin-left: 1em;
           }
 
-          .smaller  div.padding-10-0.margin-10-0 a {
+          .smaller div.padding-10-0.margin-10-0 a {
           	margin-left: 10px;
           }
 
