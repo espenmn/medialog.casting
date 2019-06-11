@@ -11,14 +11,7 @@
       template="actor_view.pt"
     	permission="zope.Public"
     />
-
-    <!--browser:page
-      for="*"
-      name="grid_view"
-      template="gridview.pt"
-    	permission="zope.Public"
-    /-- >
-
+    
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
         class="plone.app.contenttypes.browser.collection.CollectionView"
