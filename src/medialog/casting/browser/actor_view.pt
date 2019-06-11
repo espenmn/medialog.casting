@@ -60,20 +60,21 @@
       <p>
         <span>Førerkort: </span>
         <span class="actor_value" tal:repeat='klasse context/driving_licence|None'>
-          <span i18n:translate="">• ${klasse}</span>
+          <span i18n:translate="">${klasse}. </span>
         </span>
       </p>
       <p>
         <span>Erfaring: </span>
         <span class="actor_value">
           <tal:repeat tal:repeat='rep context/erfaring|None'>
-           <span>• ${rep}</span>
+           <span>${rep}.</span>
          </tal:repeat>
       </p>
       <p><span>Prosjekter: </span>
          <span class="actor_value">
             <tal:repeat tal:repeat="ref view/get_relateditems">
-                 <span>${ref/Title}. </span>
+                 <a href="${ref/absolute_url}" title="link to project">
+                   ${ref/Title}</a>.
             </tal:repeat>
         </span>
        </p>
