@@ -148,7 +148,9 @@ div.flex  {
 	border-radius: 50%;
 }
 
-
+#gridview ol.flex {
+	flex-wrap: wrap
+}
 
 
 #gridview ol.flex  {
