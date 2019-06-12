@@ -9,7 +9,7 @@
       name="actor_view"
       class=".views.IActorView"
       template="actor_view.pt"
-      	permission="zope2.View"
+      	permission="zope2.AccessContentsInformation"
     />
 
     <browser:pages
