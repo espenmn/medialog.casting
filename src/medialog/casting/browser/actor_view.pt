@@ -21,8 +21,8 @@
       <span tal:condition="context/email|None">
         &nbsp; <i class="fa fa-envelope"/>  ${context/email|None} &nbsp;
       </span>
-      <span tal:condition="context/phone|None"/> 
-        &nbsp; <i class="fa fa-phone" />  ${context/phone|None} &nbsp;
+      <span tal:condition="context/phone|None">
+        &nbsp; <i class="fa fa-phone"/>  ${context/phone|None} &nbsp;
       </span>
     </p>
 
