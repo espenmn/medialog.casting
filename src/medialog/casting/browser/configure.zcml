@@ -9,9 +9,9 @@
       name="actor_view"
       class=".views.IActorView"
       template="actor_view.pt"
-    	permission="zope.Public"
+      	permission="zope2.View"
     />
-    
+
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
         class="plone.app.contenttypes.browser.collection.CollectionView"
