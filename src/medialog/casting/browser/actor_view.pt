@@ -142,7 +142,6 @@ div.textblock span.actor_value {
   list-style-image: none;
   list-style-type: none;
   justify-content: flex-start;
-  max-width: 250px;
   margin: auto;
   max-width: 100%;
 }
@@ -168,9 +167,30 @@ div.textblock span.actor_value {
 }
 
 @media (max-width: 768px) {
-  #gridview ol.flex  {
+
+  div.flex {
+	   display: block !important
+  }
+
+   div.textblock {
+     margin: 1em 0;
+     clear: both;
+  }
+
+  #gridview ol.flex,
+  div.flex  {
     flex-wrap: wrap;
 
+  }
+
+  figure img,
+  #gridview ol li,
+  #gridview img {
+    width: 100%;
+
+  }
+  figure img { 
+    height: auto !important;
   }
 }
 
