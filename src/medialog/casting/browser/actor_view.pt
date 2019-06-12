@@ -28,7 +28,8 @@
 
     <div class="flex">
       <figure tal:define="scale_func context/@@images;
-             scaled_image python:scale_func.scale('image', scale='preview')">
+             scaled_image python:scale_func.scale('image', scale='preview')"
+             class="portrait_image">
         <img tal:replace="structure python:scaled_image.tag()"
              tal:on-error=""/>
       </figure>
@@ -116,7 +117,7 @@
 
 <style>
 
-  .flex figure { max-width: 45%}
+  .portrait_image { max-width: 40%}
 
   div.textblock {
 	margin-right:  auto;
