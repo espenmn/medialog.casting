@@ -11,9 +11,18 @@
 <metal:block define-macro="content-core">
 
     <h1><span>${context/first_name|None}</span> <b>${context/last_name|None}</b></h1>
-    <p>Født: <span class="pat-moment"
+    <p><i class="fa fa-calendar"> </i> <span class="pat-moment"
        data-pat-moment="format:calendar">
         ${python: context.born}
+      </span>. &nbsp;
+      <span>
+        &nbsp; <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None}. &nbsp;
+      </span>
+      <span>
+        &nbsp; <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
+      </span>
+      <span>
+        &nbsp; <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None} &nbsp;
       </span>
     </p>
 
@@ -26,11 +35,13 @@
       <div class="textblock">
       <p><span>Alder:</span> <span class="actor_value">${context/age|None} år</span></p>
       <p><span>Kjønn:</span> <span class="actor_value">${context/sex|None}</span></p>
-      <p><span><!--i class="fa fas fa-address-card"/-->Kontaktinfo: <span class="actor_value">
-        <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None} &nbsp;
-        <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
-        <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None}</span>
-      </p>
+
+        <!--p class="actor_xvalue">
+        <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None}<br/>
+        <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None}<br/>
+        <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None}
+      </p-->
+
       <p><span>Etnisitet:   </span>
          <span class="actor_value">
            <tal:repeat tal:repeat='rep context/etnisitet|None'>
@@ -45,7 +56,7 @@
          </tal:repeat>
         </span>
       </p>
-      <p><span>Dialekt:     <span class="actor_value">${context/dialekt|None}</span></p>
+      <p><span>Dialekt:     </span><span class="actor_value">${context/dialekt|None}</span></p>
       <p><span>Øyenfarge:   </span><span class="actor_value">${context/eye_color|None}</span></p>
       <p><span>Hårfarge:    </span><span class="actor_value">${context/hair_color|None}</span></p>
       <p><span>Høyde:       </span><span class="actor_value">${context/height|None} cm</span></p>
@@ -130,8 +141,6 @@ div.flex  {
 .infotext i{
 	font-size: 1.4em;
 	color:  white;
-	xposition: relative;
-	xposition: relative;
 	background: #62a4d4;
 	padding: 0.2em 0.5em;
   margin-bottom: 10px;
@@ -149,6 +158,7 @@ div.flex  {
   justify-content: flex-start;
   margin: auto;
   max-width: 100%;
+  flex-wrap: wrap
 }
 
 #gridview li { 
