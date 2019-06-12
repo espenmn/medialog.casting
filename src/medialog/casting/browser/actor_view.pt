@@ -115,6 +115,9 @@
 
 
 <style>
+
+  figure img { max-width: 50%}
+
   div.textblock {
 	margin-right:  auto;
 	margin-left: 3em;
