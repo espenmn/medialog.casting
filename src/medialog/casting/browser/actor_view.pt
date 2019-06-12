@@ -116,7 +116,7 @@
 
 <style>
 
-  figure img { max-width: 50%}
+  .flex figure { max-width: 45%}
 
   div.textblock {
 	margin-right:  auto;
