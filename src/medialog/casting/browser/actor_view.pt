@@ -80,6 +80,29 @@
        </p>
     </div>
 
+
+      <section id="gridview" class="imagegrid">
+          <!--h4><i class="fa fa-image"/> Bilder</h4-->
+           <ol class="flex">
+            <tal:image tal:repeat="item context/@@contentlisting">
+              <li  tal:condition="python: item.portal_type=='Image'" tal:define="obj item/getObject;
+                     scale_func obj/@@images;
+                     scaled_image python:scale_func.scale('image', width=250, height=250, direction='down')">
+                <figure tal:condition="scaled_image">
+                  <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
+                    <img  class="image-popup"
+                          tal:replace="structure python:scaled_image.tag()"
+                          tal:on-error=""
+                          tal:condition="scaled_image"/>
+                    <div><p  class="center">${item/Title}</p></div>
+                  </a>
+                </figure>
+              </li>
+            </tal:image>
+          </ol>
+      </section>
+
+
 <style>
   div.textblock {
 	margin-right:  auto;
@@ -91,14 +114,15 @@ div.textblock span.actor_value {
 	margin-left: 0.5em;
 }
 
-#content div.flex {
+#content div.flex,
+.imagegrid {
 	padding: 20px 0;
 	margin: 16px 0 30px 0;
 	border-top: 2px solid #4da5d9;
 	border-bottom:   2px solid #4da5d9;
 }
 
-.infotext i {
+.infotext i{
 	font-size: 1.4em;
 	color:  white;
 	xposition: relative;
@@ -109,6 +133,47 @@ div.textblock span.actor_value {
   margin-right: 0.5em;
 	border-radius: 50%;
 }
+
+
+
+
+#gridview ol.flex  {
+  padding: 0;
+  list-style-image: none;
+  list-style-type: none;
+  justify-content: flex-start;
+  max-width: 250px;
+  margin: auto;
+  max-width: 100%;
+}
+
+#gridview li { 
+    width: 250px;
+    margin: 10px;
+    list-style-image: none;
+    list-style-type: none;
+    min-width: 150px;
+}
+
+#gridview img {
+  width: 250px;
+}
+
+#gridview p.center {
+  text-align: center;
+  margin-top: 1em;
+  overflow: hidden;
+  width: 250px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  #gridview ol.flex  {
+    flex-wrap: wrap;
+
+  }
+}
+
 </style>
 
   </metal:block>

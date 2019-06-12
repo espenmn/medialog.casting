@@ -41,6 +41,10 @@ class IActorView(BrowserView):
         rel_items = list(catalog.findRelations(rel_query))
         return rel_items
 
+    def get_images(self, context):
+        return context.items
+
+
     # def get_brains_for_relation_ids(context, relationvalues, sort_key=None, direction='from', depth=0, portal_type=[], language='', keep_original_order=None):
     #     p_catalog = getToolByName(context, 'portal_catalog')
     #     results = []
