@@ -122,6 +122,11 @@ div.textblock span.actor_value {
 	border-bottom:   2px solid #4da5d9;
 }
 
+div.flex  {
+  flex-wrap: wrap;
+
+}
+
 .infotext i{
 	font-size: 1.4em;
 	color:  white;
