@@ -15,14 +15,14 @@
        data-pat-moment="format:calendar">
         ${python: context.born}
       </span>. &nbsp;
-      <span>
-        &nbsp; <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None}. &nbsp;
+      <span tal:condition="context/adresse|None">
+        &nbsp; <i class="fa fa-home"/>  ${context/adresse|None}. &nbsp;
       </span>
-      <span>
-        &nbsp; <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None} &nbsp;
+      <span tal:condition="context/email|None">
+        &nbsp; <i class="fa fa-envelope"/>  ${context/email|None} &nbsp;
       </span>
-      <span>
-        &nbsp; <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None} &nbsp;
+      <span tal:condition="context/phone|None"/> 
+        &nbsp; <i class="fa fa-phone" />  ${context/phone|None} &nbsp;
       </span>
     </p>
 
