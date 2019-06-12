@@ -157,6 +157,7 @@ div.flex  {
     list-style-image: none;
     list-style-type: none;
     min-width: 150px;
+    max-width: 100%;
 }
 
 #gridview img {
