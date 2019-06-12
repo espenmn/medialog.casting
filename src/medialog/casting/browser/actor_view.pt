@@ -162,8 +162,10 @@ div.textblock span.actor_value {
   text-align: center;
   margin-top: 1em;
   overflow: hidden;
-  width: 250px;
+  width: 100%;
   color: #999;
+  font-size: 100%
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
