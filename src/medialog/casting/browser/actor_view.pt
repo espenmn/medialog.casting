@@ -85,18 +85,16 @@
       <p tal:condition="view/get_relateditems|None"><span>Prosjekter: </span>
          <span class="actor_value">
             <tal:repeat tal:repeat="ref view/get_relateditems">
-              <tal:define tal:define="item nocall:ref/to_object">
+              <tal:define tal:define="item nocall:ref">
                  <a href="${item/getURL|item/absolute_url}" title="link to project">
                    ${item/Title}</a>.
-
               </tal:define>
             </tal:repeat>
         </span>
        </p>
     </div>
 
-
-      <section id="gridview" class="imagegrid">
+    <section id="gridview" class="imagegrid">
           <!--h4><i class="fa fa-image"/> Bilder</h4-->
            <ol class="flex">
             <tal:image tal:repeat="item context/@@contentlisting">
