@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 from zope import schema
 from zope.interface import alsoProvides
 from plone.supermodel import model
@@ -165,9 +165,25 @@ class IActorBehavior(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u'Prosjekter',
-            source=CatalogSource(portal_type=['News Item', 'Prosjekt']),
+            source=CatalogSource(portal_type=['prosjekt', 'Prosjekt']),
         ),
         required=False,
     )
 
 alsoProvides(IActorBehavior, IFormFieldProvider)
+
+
+class IRelatedActorBehavior(model.Schema):
+    """ Add actor behavior"""
+
+    relatedItems = RelationList(
+        title=_(u'label_related_items', default=u'Personer'),
+        default=[],
+        value_type=RelationChoice(
+            title=u'Personer',
+            source=CatalogSource(portal_type=['Person', 'person', 'Actor']),
+        ),
+        required=False,
+    )
+
+alsoProvides(IRelatedActorBehavior, IFormFieldProvider)

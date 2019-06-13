@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="medialog.casting"
+      metal:use-macro="context/main_template/macros/master">
+<body>
+    <metal:block fill-slot="content-core">
+
+      <figure tal:define="scale_func context/@@images;
+                  scale context/@@images;
+                  scaled_image python:scale_func.scale('image', scale='preview')"
+                  tal:on-error=""
+                  class="margin-20-0">
+              <img tal:replace="structure python:scaled_image.tag()"
+                   tal:condition="scaled_image" />
+               <figcaption class="padding-10-0" tal:condition="context/image_caption|nothing"
+                   tal:content="context/image_caption">
+               </figcaption>
+      </figure>
+
+      <div tal:replace="structure context/text/output|None" />
+
+        <tal:check tal:condition="view/get_relateditems|None">
+         <h3>Personer: </h3>
+          <ol id="gridview" class="flex">
+           <tal:repeat tal:repeat="ref view/get_relateditems">
+                <li  tal:define="scale_func ref/@@images;
+                       scaled_image python:scale_func.scale('image', width=128, height=128, direction='down')">
+                  <a href="${ref/absolute_url}" title="link to project">
+                  <figure tal:condition="scaled_image">
+                    <a href="${ref/getURL|ref/absolute_url}" class="margin-0 padding-0">
+                      <img  class="image-popup"
+                            tal:replace="structure python:scaled_image.tag()"
+                            tal:on-error=""
+                            tal:condition="scaled_image"/>
+                      <div>
+                        <p  class="center">
+                          <span>${ref/first_name|None}</span> <b>${ref/last_name|None}</b>
+                        </p>
+                      </div>
+                    </a>
+                  </figure>
+                </a>
+                </li>
+
+            </tal:repeat>
+          </ol>
+
+    <style>
+
+
+      #gridview   {
+        padding: 0;
+        list-style-image: none;
+        list-style-type: none;
+        justify-content: flex-start;
+        max-width: 150px;
+      }
+
+      #gridview li { 
+          width: 128px;
+          margin: 7px 7px 7px 0;
+          list-style-image: none;
+          list-style-type: none;
+          overflow: hidden;
+      }
+
+      #gridview img {
+        width: 100%;
+      }
+
+      #gridview p.center {
+        text-align: center;
+        margin-top: 1em;
+        overflow: hidden;
+        color: #999;
+      }
+
+    </style>
+        </tal:check>
+
+    </metal:block>
+<body>
+</html>

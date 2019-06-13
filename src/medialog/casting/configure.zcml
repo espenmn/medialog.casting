@@ -14,8 +14,6 @@
 
   <!--<includeDependencies package="." />-->
 
-  <include package=".views" />
-
   <include file="behaviors.zcml" />
   <include package=".browser" />
   <include file="permissions.zcml" />
@@ -70,7 +68,7 @@
       name="medialog.casting.LanguageVocabulary" />
 
   <utility
-  	  component="medialog.casting.vocabularies.DriverLicenceVocabulary"      
+  	  component="medialog.casting.vocabularies.DriverLicenceVocabulary"
       name="medialog.casting.DriverLicenceVocabulary" />
 
 </configure>

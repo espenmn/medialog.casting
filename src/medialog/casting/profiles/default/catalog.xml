@@ -35,7 +35,7 @@
    <indexed_attr value="driving_licence"/>
 </index>
 
-<index name=erfaring meta_type="KeywordIndex">
+<index name="erfaring" meta_type="KeywordIndex">
    <indexed_attr value="erfaring"/>
 </index>
 

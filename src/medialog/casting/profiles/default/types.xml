@@ -3,4 +3,6 @@
   <property name="title">Controls the available contenttypes in your portal</property>
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
   <object meta_type="Dexterity FTI" name="Actor"/>
+  <!--object name="person" meta_type="Dexterity FTI"/-->
+  <object name="prosjekt" meta_type="Dexterity FTI"/>
 </object>

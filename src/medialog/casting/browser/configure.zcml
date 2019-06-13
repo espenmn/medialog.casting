@@ -12,6 +12,15 @@
       	permission="cmf.ModifyPortalContent"
     />
 
+    <browser:page
+       name="prosjekt_view"
+       for="Products.CMFCore.interfaces.IFolderish"
+       class=".views.ProsjektView"
+       template="prosjekt_view.pt"
+       permission="zope2.View"
+       />
+
+
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
         class="plone.app.contenttypes.browser.collection.CollectionView"
