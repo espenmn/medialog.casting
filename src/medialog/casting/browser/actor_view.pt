@@ -85,7 +85,7 @@
       <p><span>Prosjekter: </span>
          <span class="actor_value">
             <tal:repeat tal:repeat="ref view/get_relateditems">
-                 <a href="${ref/absolute_url}" title="link to project">
+                 <a href="${ref/absolute_url|None}" title="link to project">
                    ${ref/Title}</a>.
             </tal:repeat>
         </span>

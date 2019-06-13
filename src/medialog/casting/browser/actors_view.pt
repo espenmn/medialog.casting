@@ -69,10 +69,11 @@
                </tal:repeat>
             </p>
 
-            <p><span>Prosjekter: </span>
+            <p tal:condition="item/relatedItems|None">
+              <span>Prosjekter: </span>
               <span class="actor_value">
                 <tal:repeat tal:repeat="ref item/relatedItems|None">
-                 <span>${ref/to_object/Title}. </span>
+                 <span>${ref/to_object/Title|None}. </span>
                 </tal:repeat>
               </span>
             </p>
