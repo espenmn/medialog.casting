@@ -27,7 +27,7 @@
            <tal:repeat tal:repeat="ref view/get_relateditems">
              <tal:define tal:define="ref_obj nocall:ref">
                 <li  tal:define="scale_func ref_obj/@@images|None">
-                  <tal:define tal:define="scaled_image python:scale_func.scale('image', width=200, height=200, direction='down') or None"
+                  <tal:define tal:define="scaled_image python:scale_func.scale('image', width=150, height=150, direction='down') or None"
                         tal:on-error="">
                   <figure tal:condition="scaled_image">
                     <a href="${ref_obj/getURL|ref_obj/absolute_url}" class="margin-0 padding-0">
@@ -58,7 +58,6 @@
       }
 
       #gridview li { 
-          width: 128px;
           margin: 7px 7px 7px 0;
           list-style-image: none;
           list-style-type: none;
