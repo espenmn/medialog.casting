@@ -59,6 +59,7 @@
 
       #gridview li { 
           margin: 7px 7px 7px 0;
+          width: 155px;
           list-style-image: none;
           list-style-type: none;
           overflow: hidden;
