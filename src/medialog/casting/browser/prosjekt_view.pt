@@ -36,7 +36,7 @@
                             tal:on-error=""
                             tal:condition="scaled_image"/>
                       <div>
-                        <p class="center"><span>${ref_obj/first_name|None}</span> <b>${ref_obj/last_name|None}</b></p>
+                        <p class="center"><span>${ref_obj/first_name|None}</span><br/><b>${ref_obj/last_name|None}</b></p>
                       </div>
                     </a>
                   </figure>
@@ -54,7 +54,7 @@
         list-style-image: none;
         list-style-type: none;
         justify-content: flex-start;
-        max-width: 150px;
+        max-width: 250px;
       }
 
       #gridview li { 
