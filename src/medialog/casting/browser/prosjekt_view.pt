@@ -26,8 +26,9 @@
           <ol id="gridview" class="flex">
            <tal:repeat tal:repeat="ref view/get_relateditems">
              <tal:define tal:define="ref_obj nocall:ref">
-                <li  tal:define="scale_func ref_obj/@@images;
-                       scaled_image python:scale_func.scale('image', width=128, height=128, direction='down')">
+                <li  tal:define="scale_func ref_obj/@@images|None;
+                       scaled_image python:scale_func.scale('image', width=200, height=200, direction='down')"
+                       tal:on-error="">
                   <figure tal:condition="scaled_image">
                     <a href="${ref_obj/getURL|ref_obj/absolute_url}" class="margin-0 padding-0">
                       <img  class="image-popup"
@@ -52,7 +53,7 @@
         list-style-image: none;
         list-style-type: none;
         justify-content: flex-start;
-        max-width: 150px;
+        max-width: 250px;
       }
 
       #gridview li { 
