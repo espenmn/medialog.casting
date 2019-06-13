@@ -23,7 +23,7 @@
 
         <tal:check tal:condition="view/get_relateditems|None">
          <h3>Personer: </h3>
-          <ol id="gridview" class="flex">
+          <ol id="gridview" class="flex margin-20 0">
            <tal:repeat tal:repeat="ref view/get_relateditems">
              <tal:define tal:define="ref_obj nocall:ref">
                 <li  tal:define="scale_func ref_obj/@@images|None">
@@ -59,7 +59,6 @@
 
       #gridview li { 
           margin: 7px 7px 7px 0;
-          width: 155px;
           list-style-image: none;
           list-style-type: none;
           overflow: hidden;
