@@ -41,14 +41,6 @@ class IActorView(BrowserView):
         rel_items = list(catalog.findRelations(rel_query))
         return rel_items
 
-# -*- coding: utf-8 -*-
-
-from medialog.casting import _
-from Products.Five.browser import BrowserView
-
-
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 
 class ProsjektView(BrowserView):
     # If you want to define a template here, please remove the template from
@@ -69,7 +61,7 @@ class ProsjektView(BrowserView):
         from_objects = [ref for ref in refers]
         ref_list = to_objects + from_objects
         return OrderedDict( (x,1) for x in ref_list ).keys()
-        
+
     def get_referers(self, context = None):
         """ Return a list of backreference relationvalues
         """
@@ -79,8 +71,3 @@ class ProsjektView(BrowserView):
         rel_query = { 'to_id' : intids.getId(aq_inner(context)) }
         rel_items = list(catalog.findRelations(rel_query))
         return rel_items
-
-
-
-#class FolderView(BrowserView):
-#    pass
