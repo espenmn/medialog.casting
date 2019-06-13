@@ -54,7 +54,7 @@
         list-style-image: none;
         list-style-type: none;
         justify-content: flex-start;
-        max-width: 250px;
+        max-width: 100%;
       }
 
       #gridview li { 
