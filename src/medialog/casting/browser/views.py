@@ -24,9 +24,10 @@ class IActorView(BrowserView):
 
     def get_relateditems(self):
         refs = (self.context.relatedItems)
-        to_objects = [ref.to_object for ref in refs]
+        import pdb; pdb.set_trace()
+        to_objects = [ref.to_object for ref in refs if not ref.isBroken()]
         refers = self.get_referers(self.context)
-        from_objects = [ref.from_object for ref in refers]
+        from_objects = [ref.from_object for ref in refers if not ref.isBroken()]
         ref_list = to_objects + from_objects
         return OrderedDict( (x,1) for x in ref_list ).keys()
         #return ref_list
@@ -56,9 +57,9 @@ class ProsjektView(BrowserView):
 
     def get_relateditems(self):
         refs = (self.context.relatedItems)
-        to_objects = [ref.to_object for ref in refs]
+        to_objects = [ref.to_object for ref in refs if not ref.isBroken()]
         refers = self.get_referers(self.context)
-        from_objects = [ref.from_object for ref in refers]
+        from_objects = [ref.from_object for ref in refers if not ref.isBroken()]
         ref_list = to_objects + from_objects
         return OrderedDict( (x,1) for x in ref_list ).keys()
 
