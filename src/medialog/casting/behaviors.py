@@ -181,7 +181,7 @@ class IRelatedActorBehavior(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u'Personer',
-            source=CatalogSource(portal_type=['Person', 'person', 'Actor']),
+            source=CatalogSource(portal_type='Person'),
         ),
         required=False,
     )
