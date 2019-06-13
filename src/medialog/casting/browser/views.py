@@ -24,7 +24,6 @@ class IActorView(BrowserView):
 
     def get_relateditems(self):
         refs = (self.context.relatedItems)
-        import pdb; pdb.set_trace()
         to_objects = [ref.to_object for ref in refs if not ref.isBroken()]
         refers = self.get_referers(self.context)
         from_objects = [ref.from_object for ref in refers if not ref.isBroken()]
