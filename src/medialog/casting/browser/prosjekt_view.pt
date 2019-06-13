@@ -25,25 +25,22 @@
          <h3>Personer: </h3>
           <ol id="gridview" class="flex">
            <tal:repeat tal:repeat="ref view/get_relateditems">
-                <li  tal:define="scale_func ref/@@images;
+             <tal:define tal:define="item nocall:ref/to_object">
+                <li  tal:define="scale_func item/@@images;
                        scaled_image python:scale_func.scale('image', width=128, height=128, direction='down')">
-                  <a href="${ref/absolute_url}" title="link to project">
                   <figure tal:condition="scaled_image">
-                    <a href="${ref/getURL|ref/absolute_url}" class="margin-0 padding-0">
+                    <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
                       <img  class="image-popup"
                             tal:replace="structure python:scaled_image.tag()"
                             tal:on-error=""
                             tal:condition="scaled_image"/>
                       <div>
-                        <p  class="center">
-                          <span>${ref/first_name|None}</span> <b>${ref/last_name|None}</b>
-                        </p>
+                        <p class="center"><span>${item/first_name|None}</span> <b>${item/last_name|None}</b></p>
                       </div>
                     </a>
                   </figure>
-                </a>
                 </li>
-
+              </tal:define>
             </tal:repeat>
           </ol>
 

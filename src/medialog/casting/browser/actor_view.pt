@@ -85,8 +85,11 @@
       <p tal:condition="view/get_relateditems|None"><span>Prosjekter: </span>
          <span class="actor_value">
             <tal:repeat tal:repeat="ref view/get_relateditems">
-                 <a href="${ref/absolute_url|None}" title="link to project">
-                   ${ref/Title}</a>.
+              <tal:define tal:define="item nocall:ref/to_object">
+                 <a href="${item/getURL|item/absolute_url}" title="link to project">
+                   ${item/Title}</a>.
+
+              </tal:define>
             </tal:repeat>
         </span>
        </p>
