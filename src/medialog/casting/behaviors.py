@@ -173,7 +173,7 @@ class IActorBehavior(model.Schema):
         'relatedItems',
         RelatedItemsFieldWidget,
         pattern_options={
-            'basePath': '/prosjekter',
+            'basePath': '/',
             "mode": "auto",
             "favorites": []
             }
