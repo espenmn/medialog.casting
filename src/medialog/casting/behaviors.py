@@ -4,10 +4,11 @@ from zope.interface import alsoProvides
 from plone.supermodel import model
 from zope.interface import Interface
 from zope.interface import implements
-from plone.autoform import directives as form
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.namedfile import field as namedfile
 from zope.schema.vocabulary import SimpleTerm
@@ -16,12 +17,10 @@ from zope.i18nmessageid import MessageFactory
 from plone.schema import Email
 _ = MessageFactory('medialog.casting')
 
-
 SexVocabulary = SimpleVocabulary(
     [SimpleTerm(value=u'Mann', title=_(u'Mann')),
      SimpleTerm(value=u'Kvinne', title=_(u'Kvinne')),]
     )
-
 
 class IActorBehavior(model.Schema):
     """ Add actor behavior"""
@@ -169,6 +168,16 @@ class IActorBehavior(model.Schema):
         ),
         required=False,
     )
+
+    directives.widget(
+        'relatedItems',
+        RelatedItemsFieldWidget,
+        pattern_options={
+            'basePath': '/prosjekter',
+            "mode": "auto",
+            "favorites": []
+            }
+        )
 
 alsoProvides(IActorBehavior, IFormFieldProvider)
 
