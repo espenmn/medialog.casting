@@ -8,11 +8,11 @@
 <body>
 
 <metal:content-core fill-slot="content-core">
-
+yyy
 
   <section id="gridview" class=""
     tal:define="items context/@@contentlisting">
-
+xxxx
        <ol class="flex flex-wrap">
         <tal:image tal:repeat="item items">
           <li  tal:define="obj item/getObject;
