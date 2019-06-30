@@ -42,9 +42,9 @@
   }
 
   #gridview li { 
-      width: 250px;
+      max-width: 170px;
       display: block;
-      
+      margin: 20px;
       list-style-image: none;
       list-style-type: none;
  
@@ -58,7 +58,7 @@
     text-align: center;
     margin-top: 1em;
     overflow: hidden;
-    width: 250px;
+    max-width: 250px;
     color: #999;
   }
 
