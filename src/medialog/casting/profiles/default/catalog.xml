@@ -4,7 +4,7 @@
 <index name="first_name" meta_type="FieldIndex">
   <indexed_attr value="first_name"/>
 </index>
-<index name="sex" meta_type="FieldIndex">
+<index name="sex" meta_type="KeywordIndex">
   <indexed_attr value="sex"/>
 </index>
 <index name="born" meta_type="DateIndex">
