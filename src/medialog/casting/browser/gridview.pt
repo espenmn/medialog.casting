@@ -17,7 +17,7 @@
                     image_scale portal/@@image_scale">
       <metal:entry fill-slot="entry">
 
-        <div tal:define="scaled_image python:scale_func.scale('image', width=150, height=250, direction='down')"
+        <div tal:define="scaled_image python:image_scale.scale('image', width=150, height=250, direction='down')"
                  tal:condition="python: item_has_image">
               <a tal:attributes="href item_link">
                 <img tal:replace="structure python:image_scale.tag(item, 'image', 
