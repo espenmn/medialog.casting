@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="medialog.casting">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block use-macro="context/@@listing_view/macros/content-core">
+
+  <metal:entries fill-slot="entries">
+    <div><button class="black white-background"><i class="fa fa-compress" id="compact_button"> </i></button></div>
+    <metal:block use-macro="context/@@listing_view/macros/entries"
+        tal:define="portal context/@@plone_portal_state/portal;
+                    image_scale portal/@@image_scale">
+      <metal:entry fill-slot="entry">
+
+        <div tal:define="scaled_image python:scale_func.scale('image', width=150, height=250, direction='down')"
+                 tal:condition="python: item_has_image">
+              <a tal:attributes="href item_link">
+                <img tal:replace="structure python:image_scale.tag(item, 'image', 
+                    scale=scaled_image" />
+                <div><p  class="center">${item/Title}</p></div>
+              </a>
+ 
+          </div>
+
+      </metal:entry>
+
+    </metal:block>
+  </metal:entries>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
