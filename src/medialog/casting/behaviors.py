@@ -45,7 +45,7 @@ class IActorBehavior(model.Schema):
     sex = schema.List (
         title = _("sex", default=u"Kjønne etc."),
         value_type=schema.Choice(
-            title = _("Kjønn etc", default=u"Kjønn etc"),
+            title = _("sex etc", default=u"Kjønn etc"),
             vocabulary = SexVocabulary
         )
     )
