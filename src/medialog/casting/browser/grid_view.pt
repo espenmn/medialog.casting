@@ -8,16 +8,16 @@
 <body>
 
 <metal:content-core fill-slot="content-core">
-yyy
+ 
 
   <section id="gridview" class=""
     tal:define="items python: context.restrictedTraverse('@@contentlisting')()">
-xxxx
+ 
        <ol class="flex flex-wrap">
         <tal:image tal:repeat="item batch">
           <li  tal:define="obj item/getObject;
                  scale_func obj/@@images;
-                 scaled_image python:scale_func.scale('image', width=250, height=150, direction='down')">
+                 scaled_image python:scale_func.scale('image', width=150, height=250, direction='down')">
  
             <figure tal:condition="scaled_image">
               <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
@@ -33,7 +33,7 @@ xxxx
       </ol>
   <style>
 
-  #gridview ol.flex.flex-wrap  {
+  #gridview ol.flex   {
     padding: 0;
     list-style-image: none;
     list-style-type: none;
@@ -47,7 +47,7 @@ xxxx
       margin: 250px;
       list-style-image: none;
       list-style-type: none;
-      overflow: hidden;
+ 
   }
 
   #gridview img {
