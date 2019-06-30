@@ -19,7 +19,10 @@ _ = MessageFactory('medialog.casting')
 
 SexVocabulary = SimpleVocabulary(
     [SimpleTerm(value=u'Mann', title=_(u'Mann')),
-     SimpleTerm(value=u'Kvinne', title=_(u'Kvinne')),]
+     SimpleTerm(value=u'Kvinne', title=_(u'Kvinne')),
+     SimpleTerm(value=u'Barn', title=_(u'Barn')),
+     SimpleTerm(value=u'Uniq', title=_(u'Uniq')),
+     SimpleTerm(value=u'Modell', title=_(u'Modell'))]
     )
 
 class IActorBehavior(model.Schema):
@@ -39,10 +42,12 @@ class IActorBehavior(model.Schema):
         required = True,
     )
 
-    sex = schema.Choice(
-        title = _("sex", default=u"Kjønn"),
-        required = True,
-        vocabulary = SexVocabulary
+    sex = schema.List (
+        title = _("sex", default=u"Kjønne etc."),
+        value_type=schema.Choice(
+            title = _("Kjønn etc", default=u"Kjønn etc"),
+            vocabulary = SexVocabulary
+        )
     )
 
     phone = schema.TextLine(
