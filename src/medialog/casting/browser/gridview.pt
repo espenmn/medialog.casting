@@ -13,12 +13,12 @@
   <section id="gridview" class=""
     tal:define="items context/@@contentlisting">
 
-       <ol class="flex flex-wrap">xxx
+       <ol class="flex flex-wrap">
         <tal:image tal:repeat="item items">
           <li  tal:define="obj item/getObject;
                  scale_func obj/@@images;
                  scaled_image python:scale_func.scale('image', width=250, height=150, direction='down')">
-sss
+ 
             <figure tal:condition="scaled_image">
               <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
                 <img  class="image-popup"

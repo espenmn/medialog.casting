@@ -20,7 +20,13 @@
        permission="zope2.View"
        />
 
-
+    <browser:page
+       name="grid_view"
+       for="Products.CMFCore.interfaces.IFolderish"
+       template="grid_view.pt"
+       permission="zope2.View"
+       />
+       
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
         class="plone.app.contenttypes.browser.collection.CollectionView"
@@ -28,6 +34,10 @@
       <browser:page
           name="actors_view"
           template="actors_view.pt"
+          />
+      <browser:page
+          name="grid_view"
+          template="grid_view.pt"
           />
     </browser:pages>
 
