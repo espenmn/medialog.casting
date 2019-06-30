@@ -11,10 +11,10 @@
 yyy
 
   <section id="gridview" class=""
-    tal:define="items context/@@contentlisting">
+    tal:define="items python: context.restrictedTraverse('@@contentlisting')()">
 xxxx
        <ol class="flex flex-wrap">
-        <tal:image tal:repeat="item items">
+        <tal:image tal:repeat="item batch">
           <li  tal:define="obj item/getObject;
                  scale_func obj/@@images;
                  scaled_image python:scale_func.scale('image', width=250, height=150, direction='down')">
