@@ -14,7 +14,7 @@
     tal:define="items python: context.restrictedTraverse('@@contentlisting')()">
  
        <ol class="flex flex-wrap">
-        <tal:image tal:repeat="item batch">
+        <tal:image tal:repeat="item items">
           <li  tal:define="obj item/getObject;
                  scale_func obj/@@images;
                  scaled_image python:scale_func.scale('image', width=150, height=250, direction='down')">
