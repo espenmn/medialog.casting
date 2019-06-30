@@ -43,7 +43,8 @@
 
   #gridview li { 
       width: 250px;
-      margin: 250px;
+      display: block;
+      
       list-style-image: none;
       list-style-type: none;
  
