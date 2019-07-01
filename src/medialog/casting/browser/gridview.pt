@@ -13,15 +13,15 @@
   <metal:entries fill-slot="entries">
     <div><button class="black white-background"><i class="fa fa-compress" id="compact_button"> </i></button></div>
     <metal:block use-macro="context/@@listing_view/macros/entries"
-        tal:define="portal context/@@plone_portal_state/portal;
-                    image_scale portal/@@image_scale">
+        tal:define="portal context/@@plone_portal_state/portal">
       <metal:entry fill-slot="entry">
 
-        <div tal:define="scaled_image python:image_scale.scale('image', width=150, height=250, direction='down')"
+        <div tal:define="scale_func context/@@images;
+                    scaled_image python:scale_func.scale('image', width=250, height=150, direction='down')">"
                  tal:condition="python: item_has_image">
               <a tal:attributes="href item_link">
-                <img tal:replace="structure python:image_scale.tag(item, 'image', 
-                    scale=scaled_image" />
+                <img tal:replace="structure python:image_scale.tag(item, 'image',
+                  scale=scaled_image, css_class='grid-image')" />
                 <div><p  class="center">${item/Title}</p></div>
               </a>
  
