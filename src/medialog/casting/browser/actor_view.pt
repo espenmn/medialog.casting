@@ -8,6 +8,7 @@
 <body>
 
 <metal:content-core fill-slot="main">
+
 <metal:block define-macro="content-core">
 
     <h1><span>${context/first_name|None}</span> <b>${context/last_name|None}</b></h1>
@@ -23,7 +24,14 @@
       </span>
       <span tal:condition="context/phone|None">
         &nbsp; <i class="fa fa-phone"/>  ${context/phone|None} &nbsp;
-      </span>
+      </span>  &nbsp;  &nbsp;
+      <button type="button"
+          tal:define="url context/getURL|context/absolute_url"
+            class="btn btn-primary pat-contentloader"
+            data-pat-contentloader="url:${url}/edit?ajax_load=1;target:#main-container;?ajax_load=1;content:#content">
+              <span> + Legg til project</span>
+
+      </button>
     </p>
 
     <div class="flex">
@@ -38,7 +46,7 @@
       <p><span>Kjønn:</span> <span class="actor_value">
          <tal:repeat tal:repeat="s context/sex|None">${s}. </tal:repeat>
        </span></p>
-      
+
         <!--p class="actor_xvalue">
         <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None}<br/>
         <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None}<br/>
@@ -220,6 +228,13 @@ div.flex  {
     height: auto !important;
   }
 }
+
+
+
+#formfield-form-widgets-IActorBehavior-relatedItems {
+	display: block;
+}
+
 
 </style>
 
