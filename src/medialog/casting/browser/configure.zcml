@@ -10,7 +10,7 @@
       class=".views.IActorView"
       template="actor_view.pt"
       	permission="cmf.ModifyPortalContent"
-    />
+    />sssss
 
     <browser:page
        name="prosjekt_view"
@@ -26,7 +26,7 @@
        template="grid_view.pt"
        permission="zope2.View"
        />
-       
+
     <browser:pages
         for="plone.app.contenttypes.interfaces.ICollection"
         class="plone.app.contenttypes.browser.collection.CollectionView"
@@ -36,7 +36,7 @@
           template="actors_view.pt"
           />
       <browser:page
-          name="grid_view"
+          name="gridview"
           template="gridview.pt"
           />
     </browser:pages>

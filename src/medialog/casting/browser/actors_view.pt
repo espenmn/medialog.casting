@@ -44,7 +44,8 @@
 
           <div class="textblock">
             <p><span i18n:translate="age">Alder:</span> <span class="actor_value">${item/age}</span></p>
-            <p><span>Kjønn:</span> <span class="actor_value">${item/sex|None}</span></p>
+            <p><span>Kjønn:</span> <span class="actor_value">
+              <tal:repeat tal:repeat="s item/sex|None">${s}. </tal:repeat> </span></p>
             <p><span>Etnisitet:</span>
                 <span class="actor_value">
                   <tal:repeat tal:repeat="ref item/etnisitet|None">${ref}. &nbsp;</tal:repeat>
