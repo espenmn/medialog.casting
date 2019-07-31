@@ -199,5 +199,15 @@ class IRelatedActorBehavior(model.Schema):
         ),
         required=False,
     )
+    
+    directives.widget(
+        'relatedItems',
+        RelatedItemsFieldWidget,
+        pattern_options={
+            'basePath': '/prosjekter',
+            "mode": "auto",
+            "favorites": []
+            }
+    )
 
 alsoProvides(IRelatedActorBehavior, IFormFieldProvider)
