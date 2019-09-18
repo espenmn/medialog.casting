@@ -28,8 +28,8 @@
 <index name="weight" meta_type="FieldIndex">
   <indexed_attr value="weight"/>
 </index>
-<index name="language" meta_type="KeywordIndex">
-   <indexed_attr value="language"/>
+<index name="languages" meta_type="KeywordIndex">
+   <indexed_attr value="languages"/>
 </index>
 <index name="driving_licence" meta_type="KeywordIndex">
    <indexed_attr value="driving_licence"/>
@@ -45,7 +45,7 @@
 <column value="born"/>
 <column value="age"/>
 <column value="etnisitet"/>
-<column value="language"/>
+<column value="languages"/>
 <column value="eye_color"/>
 <column value="hair_color"/>
 <column value="height"/>

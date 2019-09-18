@@ -53,7 +53,7 @@
             </p>
             <p><span>Språk:</span>
                 <span class="actor_value">
-                  <tal:repeat tal:repeat="ref item/language|None">${ref}. &nbsp;</tal:repeat>
+                  <tal:repeat tal:repeat="ref item/languages|None">${ref}. &nbsp;</tal:repeat>
               </span></p>
             <p><span>Dialekt:</span>      <span class="actor_value">${item/dialekt|None}</span></p>
             <p><span>Øyenfarge:</span>    <span class="actor_value">${item/eye_color|None}</span></p>

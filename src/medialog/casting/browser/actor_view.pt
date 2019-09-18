@@ -62,7 +62,7 @@
        </p>
       <p><span i18n:translate="">Språk:       </span>
       <span class="actor_value">
-        <tal:repeat tal:repeat='rep context/language|None'>
+        <tal:repeat tal:repeat='rep context/languages|None'>
           <span>${rep}. &nbsp;</span>
          </tal:repeat>
         </span>
