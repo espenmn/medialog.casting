@@ -199,7 +199,7 @@ class IRelatedActorBehavior(model.Schema):
         ),
         required=False,
     )
-    
+
     directives.widget(
         'relatedItems',
         RelatedItemsFieldWidget,
@@ -208,6 +208,6 @@ class IRelatedActorBehavior(model.Schema):
             "mode": "auto",
             "favorites": []
             }
-    )
+        )
 
 alsoProvides(IRelatedActorBehavior, IFormFieldProvider)

@@ -3,79 +3,70 @@
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
-    metal:use-macro="context/main_template/macros/master"
+    metal:use-macro="context/@@main_template/macros/master"
     i18n:domain="medialog.casting">
 <body>
 
 <metal:content-core fill-slot="content-core">
 
-    <!--div><a class="padding-10 white plone-background" href="/actors/++add++person">
-    <i class="fa fa-plus" id="compact_button"> </i> Ny person </a>
-  </div-->
 
-<metal:block use-macro="context/@@listing_view/macros/content-core">
+  <section id="gridview" class=""
+    tal:define="items python: context.restrictedTraverse('@@contentlisting')()">
 
-  <metal:entries fill-slot="entries">
+       <ol class="flex flex-wrap">
+        <tal:image tal:repeat="item items">
+          <li  tal:define="obj item/getObject;
+                 scale_func obj/@@images;
+                 scaled_image python:scale_func.scale('image', width=150, height=250, direction='down')">
 
-  <div class="flex">
-    <metal:block use-macro="context/@@listing_view/macros/entries"
-        tal:define="portal context/@@plone_portal_state/portal;
-                    image_scale portal/@@image_scale">
-      <metal:entry fill-slot="entry">
-
-            <div class="grid-item">
-              <a tal:attributes="href item_link">
-                <img tal:replace="structure python:image_scale.tag(item, 'image', scale=thumb_scale_summary, css_class='gridimage')" />
-                  <br/>${item/first_name} ${item/last_name}
+            <figure tal:condition="scaled_image">
+              <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
+                <img  class="image-popup"
+                      tal:replace="structure python:scaled_image.tag()"
+                      tal:on-error=""
+                      tal:condition="scaled_image"/>
+                <div><p  class="center">${item/Title}</p></div>
               </a>
+            </figure>
+          </li>
+        </tal:image>
+      </ol>
+  <style>
 
-            </div>
-      </metal:entry>
-    </metal:block>
-  </div>
-  </metal:entries>
-
-</metal:block>
-<style>
-
-.template-gridview .flex  {
-  padding: 0;
-  display: flex !important;
-  flex-wrap: wrap;
-  list-style-image: none;
-  list-style-type: none;
-  justify-content: flex-start;
-  margin: auto;
-}
-
-.grid-item { 
-    display: block;
-    margin: 20px;
+  #gridview ol.flex   {
+    padding: 0;
     list-style-image: none;
     list-style-type: none;
-    width: 200px !important;
+    justify-content: flex-start;
+    margin: auto;
+  }
 
-}
+  #gridview li { 
+      max-width: 170px;
+      display: block;
+      margin: 20px;
+      list-style-image: none;
+      list-style-type: none;
 
-.grid-item img {
-  width: 200px !important;
-  height: 300px !important;
-  object-fit: cover !important;
-  object-position: 50 0;
-  margin-botttom: 10px !important;
-}
+  }
 
-.grid-item,
-.grid-item  a {
-  text-align: center;
-  margin-top: 1em;
-  overflow: hidden;
-  color: #999;
- border-bottom: 0 none !important;
- font-size: 100%;
-}
+  #gridview img {
+    width: 100%;
+  }
 
-</style>
+  #gridview p.center {
+    text-align: center;
+    margin-top: 1em;
+    overflow: hidden;
+    max-width: 250px;
+    color: #999;
+  }
+
+  </style>
+
+  </section>
+
+
 </metal:content-core>
 
 </body>
