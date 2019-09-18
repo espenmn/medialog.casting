@@ -91,7 +91,7 @@ class IActorBehavior(model.Schema):
         )
     )
 
-    language = schema.List (
+    languages = schema.List (
         title = _("Languages", default=u"Languages"),
         value_type=schema.Choice(
             title = _("Language", default=u"Language"),
