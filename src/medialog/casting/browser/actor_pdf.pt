@@ -1,0 +1,240 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/@@main_template/macros/master"
+    i18n:domain="medialog.casting">
+<body>
+
+  <h1><span>${context/first_name|None}</span> <b>${context/last_name|None}</b></h1>
+  <p><i class="fa fa-calendar"> </i> <span class="pat-moment"
+     data-pat-moment="format:calendar">
+      ${python: context.born}
+    </span>. &nbsp;
+    <span tal:condition="context/adresse|None">
+      &nbsp; <i class="fa fa-home"/>  ${context/adresse|None}. &nbsp;
+    </span>
+    <span tal:condition="context/email|None">
+      &nbsp; <i class="fa fa-envelope"/>  ${context/email|None} &nbsp;
+    </span>
+    <span tal:condition="context/phone|None">
+      &nbsp; <i class="fa fa-phone"/>  ${context/phone|None} &nbsp;
+    </span>  &nbsp;  &nbsp;
+    <button type="button"
+        tal:define="url context/getURL|context/absolute_url"
+          class="btn btn-primary pat-contentloader"
+          data-pat-contentloader="url:${url}/edit?ajax_load=1;target:#main-container;?ajax_load=1;content:#content">
+            <span> + Legg til project</span>
+
+    </button>
+  </p>
+
+  <div class="flex">
+    <figure tal:define="scale_func context/@@images;
+           scaled_image python:scale_func.scale('image', scale='preview')"
+           class="portrait_image">
+      <img tal:replace="structure python:scaled_image.tag()"
+           tal:on-error=""/>
+    </figure>
+    <div class="textblock">
+    <p><span>Alder:</span> <span class="actor_value">${context/age|None} år</span></p>
+    <p><span>Kjønn:</span> <span class="actor_value">
+       <tal:repeat tal:repeat="s context/sex|None">${s}. </tal:repeat>
+     </span></p>
+
+      <!--p class="actor_xvalue">
+      <i class="fa fa-home" tal:condition="context/adresse|None"/>  ${context/adresse|None}<br/>
+      <i class="fa fa-envelope" tal:condition="context/email|None"/>  ${context/email|None}<br/>
+      <i class="fa fa-phone" tal:condition="context/phone|None"/>  ${context/phone|None}
+    </p-->
+
+    <p><span>Etnisitet:   </span>
+       <span class="actor_value">
+         <tal:repeat tal:repeat='rep context/etnisitet|None'>
+          <span>${rep}. &nbsp;</span>
+        </tal:repeat>
+       </span>
+     </p>
+    <p><span i18n:translate="">Språk:       </span>
+    <span class="actor_value">
+      <tal:repeat tal:repeat='rep context/languages|None'>
+        <span>${rep}. &nbsp;</span>
+       </tal:repeat>
+      </span>
+    </p>
+    <p><span>Dialekt:     </span><span class="actor_value">${context/dialekt|None}</span></p>
+    <p><span>Øyenfarge:   </span><span class="actor_value">${context/eye_color|None}</span></p>
+    <p><span>Hårfarge:    </span><span class="actor_value">${context/hair_color|None}</span></p>
+    <p><span>Høyde:       </span><span class="actor_value">${context/height|None} cm</span></p>
+    <p><span>Vekt:        </span><span class="actor_value">${context/weight|None} kg</span></p>
+  </div>
+
+  </div>
+    <div class="infotext"><h4><i class="fa fa-info"></i> <b>Annen info</b></h4> <div tal:replace="structure context/text/output|None" />
+  </div>
+
+  <div class="annet">
+    <p>
+      <span>Førerkort: </span>
+      <span class="actor_value" tal:repeat='klasse context/driving_licence|None'>
+        <span i18n:translate="">${klasse}. </span>
+      </span>
+    </p>
+    <p>
+      <span>Erfaring: </span>
+      <span class="actor_value">
+        <tal:repeat tal:repeat='rep context/erfaring|None'>
+         <span>${rep}.</span>
+       </tal:repeat>
+    </p>
+    <p tal:condition="view/get_relateditems|None"><span>Prosjekter: </span>
+       <span class="actor_value">
+          <tal:repeat tal:repeat="ref view/get_relateditems">
+            <tal:define tal:define="item nocall:ref">
+               <a href="${item/getURL|item/absolute_url}" title="link to project">
+                 ${item/Title}</a>.
+            </tal:define>
+          </tal:repeat>
+      </span>
+     </p>
+  </div>
+
+  <section id="gridview" class="imagegrid">
+        <!--h4><i class="fa fa-image"/> Bilder</h4-->
+         <ol class="flex">
+          <tal:image tal:repeat="item context/@@contentlisting">
+            <li  tal:condition="python: item.portal_type=='Image'" tal:define="obj item/getObject;
+                   scale_func obj/@@images;
+                   scaled_image python:scale_func.scale('image', width=250, height=250, direction='down')">
+              <figure tal:condition="scaled_image">
+                <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
+                  <img  class="image-popup"
+                        tal:replace="structure python:scaled_image.tag()"
+                        tal:on-error=""
+                        tal:condition="scaled_image"/>
+                  <div><p  class="center">${item/Title}</p></div>
+                </a>
+              </figure>
+            </li>
+          </tal:image>
+        </ol>
+    </section>
+
+
+<style>
+
+.portrait_image { max-width: 40%}
+
+div.textblock {
+margin-right:  auto;
+margin-left: 3em;
+}
+
+div.textblock span.actor_value {
+font-weight: bold;
+margin-left: 0.5em;
+}
+
+#content div.flex,
+.imagegrid {
+padding: 20px 0;
+margin: 16px 0 30px 0;
+border-top: 2px solid #4da5d9;
+border-bottom:   2px solid #4da5d9;
+}
+
+div.flex  {
+flex-wrap: wrap;
+
+}
+
+.infotext i{
+font-size: 1.4em;
+color:  white;
+background: #62a4d4;
+padding: 0.2em 0.5em;
+margin-bottom: 10px;
+margin-right: 0.5em;
+border-radius: 50%;
+}
+
+#gridview ol.flex {
+flex-wrap: wrap
+}
+
+
+#gridview ol.flex  {
+padding: 0;
+list-style-image: none;
+list-style-type: none;
+justify-content: flex-start;
+margin: auto;
+max-width: 100%;
+flex-wrap: wrap
+}
+
+#gridview li { 
+  width: 250px;
+  margin: 10px;
+  list-style-image: none;
+  list-style-type: none;
+  min-width: 150px;
+  max-width: 100%;
+}
+
+#gridview img {
+width: 250px;
+}
+
+#gridview p.center {
+text-align: center;
+margin-top: 1em;
+overflow: hidden;
+width: 100%;
+color: #999;
+font-size: 100%
+overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+div.flex {
+   display: block !important
+}
+
+ div.textblock {
+   margin: 1em 0;
+   clear: both;
+}
+
+#gridview ol.flex,
+div.flex  {
+  flex-wrap: wrap;
+
+}
+
+figure img,
+#gridview ol li,
+#gridview img {
+  width: 100%;
+
+}
+figure img { 
+  height: auto !important;
+}
+}
+
+
+
+#formfield-form-widgets-IActorBehavior-relatedItems {
+display: block;
+}
+
+
+</style>
+
+
+
+</body>
+</html>

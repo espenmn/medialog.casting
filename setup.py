@@ -48,8 +48,8 @@ setup(
         'plone.app.dexterity',
         'medialog.dutchtheme',
         'plone.app.imagecropping',
-        'collective.collectionfilter'
-
+        'collective.collectionfilter',
+        'pp.client-plone'
     ],
     extras_require={
         'test': [
